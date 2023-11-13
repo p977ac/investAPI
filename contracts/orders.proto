@@ -11,10 +11,12 @@ option php_namespace = "Tinkoff\\Invest\\V1";
 
 import "common.proto";
 import "google/protobuf/timestamp.proto";
+import "google/api/field_behavior.proto";
 
 service OrdersStreamService {
   //Stream сделок пользователя
   rpc TradesStream(TradesStreamRequest) returns (stream TradesStreamResponse);
+  rpc OrderStateStream(OrderStateStreamRequest) returns (stream OrderStateStreamResponse);
 }
 
 service OrdersService {/* Сервис предназначен для работы с торговыми поручениями:</br> **1**.
@@ -37,6 +39,9 @@ service OrdersService {/* Сервис предназначен для рабо�
 
   //расчет количества доступных для покупки/продажи лотов
   rpc GetMaxLots(GetMaxLotsRequest) returns (GetMaxLotsResponse);
+
+  //Метод получения предварительной стоимости для лимитной заявки
+  rpc GetOrderPrice(GetOrderPriceRequest) returns (GetOrderPriceResponse);
 }
 
 //Запрос установки соединения.
@@ -73,15 +78,16 @@ message OrderTrade {
 
 //Запрос выставления торгового поручения.
 message PostOrderRequest {
-  string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
-  int64 quantity = 2; //Количество лотов.
-  Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.
-  OrderDirection direction = 4; //Направление операции.
-  string account_id = 5; //Номер счёта.
-  OrderType order_type = 6; //Тип заявки.
-  string order_id = 7; //Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.
+  optional string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
+  int64 quantity = 2 [(google.api.field_behavior) = REQUIRED]; //Количество лотов.
+  optional Quotation price = 3; //Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.
+  OrderDirection direction = 4 [(google.api.field_behavior) = REQUIRED]; //Направление операции.
+  string account_id = 5 [(google.api.field_behavior) = REQUIRED]; //Номер счёта.
+  OrderType order_type = 6 [(google.api.field_behavior) = REQUIRED]; //Тип заявки.
+  string order_id = 7 [(google.api.field_behavior) = REQUIRED]; //Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.
   string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
-  TimeInForceType time_in_force = 9; //Алгоритм исполнения поручения
+  TimeInForceType time_in_force = 9; //Алгоритм исполнения поручения.
+  PriceType price_type = 10; //Тип цены.
 }
 
 //Прочитайте  про ключ идемпотентности [здесь](https://russianinvestments.github.io/investAPI/head-orders/)
@@ -112,8 +118,8 @@ message PostOrderResponse {
 
 //Запрос отмены торгового поручения.
 message CancelOrderRequest {
-  string account_id = 1; //Номер счёта.
-  string order_id = 2; //Идентификатор заявки.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счёта.
+  string order_id = 2 [(google.api.field_behavior) = REQUIRED]; //Идентификатор заявки.
 }
 
 //Результат отмены торгового поручения.
@@ -123,13 +129,14 @@ message CancelOrderResponse {
 
 //Запрос получения статуса торгового поручения.
 message GetOrderStateRequest {
-  string account_id = 1; //Номер счёта.
-  string order_id = 2; //Идентификатор заявки.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счёта.
+  string order_id = 2 [(google.api.field_behavior) = REQUIRED]; //Идентификатор заявки.
+  PriceType price_type = 3; //Тип цены.
 }
 
 //Запрос получения списка активных торговых поручений.
 message GetOrdersRequest {
-  string account_id = 1; //Номер счёта.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счёта.
 }
 
 //Список активных торговых поручений.
@@ -170,19 +177,19 @@ message OrderStage {
 
 //Запрос изменения выставленной заявки.
 message ReplaceOrderRequest {
-  string account_id = 1; //Номер счета.
-  string order_id = 6; //Идентификатор заявки на бирже.
-  string idempotency_key = 7; //Новый идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов. Перезатирает старый ключ.
-  int64 quantity = 11; //Количество лотов.
-  Quotation price = 12; //Цена за 1 инструмент.
-  PriceType price_type = 13; //Тип цены.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счета.
+  string order_id = 6 [(google.api.field_behavior) = REQUIRED]; //Идентификатор заявки на бирже.
+  string idempotency_key = 7 [(google.api.field_behavior) = REQUIRED]; //Новый идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов. Перезатирает старый ключ.
+  int64 quantity = 11 [(google.api.field_behavior) = REQUIRED]; //Количество лотов.
+  optional Quotation price = 12; //Цена за 1 инструмент.
+  optional PriceType price_type = 13; //Тип цены.
 }
 
-//Запрос на расчет количества доступных для покупки/продажи лотов
+//Запрос на расчет количества доступных для покупки/продажи лотов. Если не указывать цену инструмента, то расчет произведется по текущум ценам в стакане: по лучшему предложению для покупки и по лучшему спросу для продажи.
 message GetMaxLotsRequest {
-  string account_id = 1; //Номер счета
-  string instrument_id = 2; //Идентификатор инструмента, принимает значения Figi или instrument_uid
-  Quotation price = 3; //Цена инструмента
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счета
+  string instrument_id = 2 [(google.api.field_behavior) = REQUIRED]; //Идентификатор инструмента, принимает значения Figi или instrument_uid
+  optional Quotation price = 3; //Цена инструмента
 }
 
 //Результат количество доступных для покупки/продажи лотов
@@ -201,6 +208,114 @@ message GetMaxLotsResponse {
 
   message SellLimitsView {
     int64 sell_max_lots = 1; //Максимальное доступное количество лотов для продажи
+  }
+}
+
+message OrderStateStreamRequest {
+  repeated string accounts = 1; //Идентификаторы счетов.
+}
+
+message OrderStateStreamResponse {
+  oneof payload {
+    OrderState order_state = 1; //Информация об исполнении торгового поручения.
+    Ping ping = 2; //Проверка активности стрима.
+  }
+
+  message OrderState {
+    string order_id = 1; //Биржевой идентификатор заявки.
+    string order_request_id = 2; //Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.
+    string client_code = 3; //Код клиента на бирже.
+    google.protobuf.Timestamp created_at = 4; //Дата и время создания сообщения в часовом поясе UTC.
+    OrderExecutionReportStatus execution_report_status = 5; //Текущий статус заявки.
+    StatusCauseInfo status_info = 6; //Информация по статусу заявки.
+    string ticker = 7; //Тикер инструмента.
+    string class_code = 8; //Класс-код (секция торгов).
+    int32 lot_size = 9; //Лотность инструмента заявки.
+    OrderDirection direction = 10; //Направление заявки.
+    TimeInForceType time_in_force = 11; //Алгоритм исполнения поручения.
+    OrderType order_type = 12; //Тип заявки.
+    string account_id = 13; //Номер счета.
+    MoneyValue initial_order_price = 22; //Начальная цена заявки. Произведение количества запрошенных лотов на цену.
+    MoneyValue order_price = 23; //Цена выставления заявки.
+    MoneyValue amount = 24; //Предрассчитанная стоимость полной заявки.
+    MoneyValue executed_order_price = 25; //Исполненная цена заявки. Произведение средней цены покупки на количество лотов.
+    string currency = 26; //Валюта исполнения.
+    int64 lots_requested = 27; //Запрошено лотов.
+    int64 lots_executed = 28; //Исполнено лотов.
+    int64 lots_left = 29; //Число неисполненных лотов по заявке.
+    int64 lots_cancelled = 30; //Отмененные лоты.
+    MarkerType marker = 31; //Спецсимвол.
+    repeated OrderTrade trades = 33; //Массив сделок.
+    google.protobuf.Timestamp completion_time = 35; //Время исполнения заявки.
+    string exchange = 36; //Код биржи.
+    string instrument_uid = 41; //UID идентификатор инструмента.
+  }
+
+  /*
+BROKER - сделки банка при рассплитовке валюты
+CHAT - ставим, когда исполняем поручение клиента, полученное по чату
+PAPER - ставим, когда исполняем поручение клиента, полученное на бумаге
+MAGRIN - принудительное закрытие позиций
+TKBNM - сделки по управлению ликвидностью (размещение свободных денег банка, привлечение денег)
+SHORT - сделки репо по привлечению у клиентов бумаг, когда мы платим клиентам 0,5% годовых
+SPECMM - перенос временно непокрытых позиций.
+PO**** - сделки от капитала, судя по клиентскому коду
+ */
+  enum MarkerType {
+    MARKER_UNKNOWN = 0;
+    MARKER_BROKER = 1;
+    MARKER_CHAT = 2;
+    MARKER_PAPER = 3;
+    MARKER_MARGIN = 4;
+    MARKER_TKBNM = 5;
+    MARKER_SHORT = 6;
+    MARKER_SPECMM = 7;
+    MARKER_PO = 8;
+  }
+
+//Информация по статусу заявки
+  enum StatusCauseInfo {
+    CAUSE_CANCELLED_BY_CLIENT = 0; //Отменена клиентом.
+    CAUSE_CANCELLED_BY_EXCHANGE = 1; //Отменена Биржей.
+    CAUSE_CANCELLED_NOT_ENOUGH_POSITION = 2; //Недостаточно средств.
+    CAUSE_CANCELLED_BY_CLIENT_BLOCK = 3; //Клиент заблокирован.
+    CAUSE_REJECTED_BY_BROKER = 4; //Отклонена бокером.
+    CAUSE_REJECTED_BY_EXCHANGE = 5; //Отклонена Биржей.
+    CAUSE_CANCELLED_BY_BROKER = 6; //Отменена бокером.
+  }
+
+
+}
+
+message GetOrderPriceRequest {
+  string account_id = 1; //Номер счета
+  string instrument_id = 2; //Идентификатор инструмента, принимает значения Figi или instrument_uid
+  Quotation price = 3; //Цена инструмента
+  OrderDirection direction = 12; //Направление заявки.
+  int64 quantity = 13; //Количество лотов.
+}
+
+message GetOrderPriceResponse {
+  MoneyValue total_order_amount = 1;
+  MoneyValue initial_order_amount = 5;
+  int64 lots_requested = 3; //Запрошено лотов.
+  MoneyValue executed_commission = 7;
+  MoneyValue executed_commission_rub = 8;
+  MoneyValue service_commission = 9;
+  MoneyValue deal_commission = 10;
+
+  oneof instrument_extra {
+    ExtraBond extra_bond = 12;
+    ExtraFuture extra_future = 13;
+  }
+
+  message ExtraBond {
+    MoneyValue aci_value = 2;
+    Quotation nominal_conversion_rate = 3;
+  }
+
+  message ExtraFuture {
+    MoneyValue initial_margin = 2;
   }
 }
 
