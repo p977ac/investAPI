@@ -942,13 +942,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#orderstatestream" class="md-nav__link">
-    OrderStateStream
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1164,27 +1157,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamrequest" class="md-nav__link">
-    OrderStateStreamRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponse" class="md-nav__link">
-    OrderStateStreamResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponseorderstate" class="md-nav__link">
-    OrderStateStreamResponse.OrderState
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#getorderpricerequest" class="md-nav__link">
     GetOrderPriceRequest
   </a>
@@ -1249,20 +1221,6 @@
           <li class="md-nav__item">
   <a href="#timeinforcetype" class="md-nav__link">
     TimeInForceType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponsemarkertype" class="md-nav__link">
-    OrderStateStreamResponse.MarkerType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponsestatuscauseinfo" class="md-nav__link">
-    OrderStateStreamResponse.StatusCauseInfo
   </a>
   
 </li>
@@ -1769,13 +1727,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#orderstatestream" class="md-nav__link">
-    OrderStateStream
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1991,27 +1942,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamrequest" class="md-nav__link">
-    OrderStateStreamRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponse" class="md-nav__link">
-    OrderStateStreamResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponseorderstate" class="md-nav__link">
-    OrderStateStreamResponse.OrderState
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#getorderpricerequest" class="md-nav__link">
     GetOrderPriceRequest
   </a>
@@ -2076,20 +2006,6 @@
           <li class="md-nav__item">
   <a href="#timeinforcetype" class="md-nav__link">
     TimeInForceType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponsemarkertype" class="md-nav__link">
-    OrderStateStreamResponse.MarkerType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderstatestreamresponsestatuscauseinfo" class="md-nav__link">
-    OrderStateStreamResponse.StatusCauseInfo
   </a>
   
 </li>
@@ -2187,15 +2103,6 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#tradesstreamresponse">TradesStreamResponse</a></p>
-</li>
-</ul>
-<h4 id="orderstatestream">OrderStateStream</h4>
-<ul>
-<li>
-<p>Тело запроса — <a href="#orderstatestreamrequest">OrderStateStreamRequest</a></p>
-</li>
-<li>
-<p>Тело ответа — <a href="#orderstatestreamresponse">OrderStateStreamResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -2483,7 +2390,7 @@
 <tr>
 <td>time_in_force</td>
 <td><a href="#timeinforcetype">TimeInForceType</a></td>
-<td>Алгоритм исполнения поручения.</td>
+<td>Алгоритм исполнения поручения, применяется только к лимитной заявке.</td>
 </tr>
 <tr>
 <td>price_type</td>
@@ -3092,213 +2999,6 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="orderstatestreamrequest">OrderStateStreamRequest</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>accounts</td>
-<td>Массив объектов <a href="#string">string</a></td>
-<td>Идентификаторы счетов.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="orderstatestreamresponse">OrderStateStreamResponse</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order_state</td>
-<td><a href="#orderstatestreamresponseorderstate">OrderStateStreamResponse.OrderState</a></td>
-<td>Информация об исполнении торгового поручения.</td>
-</tr>
-<tr>
-<td>ping</td>
-<td><a href="#ping">Ping</a></td>
-<td>Проверка активности стрима.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="orderstatestreamresponseorderstate">OrderStateStreamResponse.OrderState</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order_id</td>
-<td><a href="#string">string</a></td>
-<td>Биржевой идентификатор заявки.</td>
-</tr>
-<tr>
-<td>order_request_id</td>
-<td><a href="#string">string</a></td>
-<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
-</tr>
-<tr>
-<td>client_code</td>
-<td><a href="#string">string</a></td>
-<td>Код клиента на бирже.</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время создания сообщения в часовом поясе UTC.</td>
-</tr>
-<tr>
-<td>execution_report_status</td>
-<td><a href="#orderexecutionreportstatus">OrderExecutionReportStatus</a></td>
-<td>Текущий статус заявки.</td>
-</tr>
-<tr>
-<td>status_info</td>
-<td><a href="#orderstatestreamresponsestatuscauseinfo">OrderStateStreamResponse.StatusCauseInfo</a></td>
-<td>Информация по статусу заявки.</td>
-</tr>
-<tr>
-<td>ticker</td>
-<td><a href="#string">string</a></td>
-<td>Тикер инструмента.</td>
-</tr>
-<tr>
-<td>class_code</td>
-<td><a href="#string">string</a></td>
-<td>Класс-код (секция торгов).</td>
-</tr>
-<tr>
-<td>lot_size</td>
-<td><a href="#int32">int32</a></td>
-<td>Лотность инструмента заявки.</td>
-</tr>
-<tr>
-<td>direction</td>
-<td><a href="#orderdirection">OrderDirection</a></td>
-<td>Направление заявки.</td>
-</tr>
-<tr>
-<td>time_in_force</td>
-<td><a href="#timeinforcetype">TimeInForceType</a></td>
-<td>Алгоритм исполнения поручения.</td>
-</tr>
-<tr>
-<td>order_type</td>
-<td><a href="#ordertype">OrderType</a></td>
-<td>Тип заявки.</td>
-</tr>
-<tr>
-<td>account_id</td>
-<td><a href="#string">string</a></td>
-<td>Номер счета.</td>
-</tr>
-<tr>
-<td>initial_order_price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена заявки. Произведение количества запрошенных лотов на цену.</td>
-</tr>
-<tr>
-<td>order_price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена выставления заявки.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Предрассчитанная стоимость полной заявки.</td>
-</tr>
-<tr>
-<td>executed_order_price</td>
-<td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Исполненная цена заявки. Произведение средней цены покупки на количество лотов.</td>
-</tr>
-<tr>
-<td>currency</td>
-<td><a href="#string">string</a></td>
-<td>Валюта исполнения.</td>
-</tr>
-<tr>
-<td>lots_requested</td>
-<td><a href="#int64">int64</a></td>
-<td>Запрошено лотов.</td>
-</tr>
-<tr>
-<td>lots_executed</td>
-<td><a href="#int64">int64</a></td>
-<td>Исполнено лотов.</td>
-</tr>
-<tr>
-<td>lots_left</td>
-<td><a href="#int64">int64</a></td>
-<td>Число неисполненных лотов по заявке.</td>
-</tr>
-<tr>
-<td>lots_cancelled</td>
-<td><a href="#int64">int64</a></td>
-<td>Отмененные лоты.</td>
-</tr>
-<tr>
-<td>marker</td>
-<td><a href="#orderstatestreamresponsemarkertype">OrderStateStreamResponse.MarkerType</a></td>
-<td>Спецсимвол.</td>
-</tr>
-<tr>
-<td>trades</td>
-<td>Массив объектов <a href="#ordertrade">OrderTrade</a></td>
-<td>Массив сделок.</td>
-</tr>
-<tr>
-<td>completion_time</td>
-<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время исполнения заявки.</td>
-</tr>
-<tr>
-<td>exchange</td>
-<td><a href="#string">string</a></td>
-<td>Код биржи.</td>
-</tr>
-<tr>
-<td>instrument_uid</td>
-<td><a href="#string">string</a></td>
-<td>UID идентификатор инструмента.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
 <h4 id="getorderpricerequest">GetOrderPriceRequest</h4>
 <table>
 <thead>
@@ -3327,12 +3027,12 @@
 <tr>
 <td>direction</td>
 <td><a href="#orderdirection">OrderDirection</a></td>
-<td>Направление заявки.</td>
+<td>Направление заявки</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов.</td>
+<td>Количество лотов</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3356,47 +3056,47 @@
 <tr>
 <td>total_order_amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Итоговая стоимость заявки</td>
 </tr>
 <tr>
 <td>initial_order_amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Стоимость заявки без комиссий, НКД, ГО (для фьючерсов — стоимость контрактов)</td>
 </tr>
 <tr>
 <td>lots_requested</td>
 <td><a href="#int64">int64</a></td>
-<td>Запрошено лотов.</td>
+<td>Запрошено лотов</td>
 </tr>
 <tr>
 <td>executed_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Общая комиссия</td>
 </tr>
 <tr>
 <td>executed_commission_rub</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Общая комиссия в рублях</td>
 </tr>
 <tr>
 <td>service_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Сервисная комиссия</td>
 </tr>
 <tr>
 <td>deal_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Комиссия за проведение сделки</td>
 </tr>
 <tr>
 <td>extra_bond</td>
 <td><a href="#getorderpriceresponseextrabond">GetOrderPriceResponse.ExtraBond</a></td>
-<td></td>
+<td>Дополнительная информация по облигациям</td>
 </tr>
 <tr>
 <td>extra_future</td>
 <td><a href="#getorderpriceresponseextrafuture">GetOrderPriceResponse.ExtraFuture</a></td>
-<td></td>
+<td>Дополнительная информация по фьючерсам</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3420,12 +3120,12 @@
 <tr>
 <td>aci_value</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Значение НКД (накопленного купонного дохода) на дату</td>
 </tr>
 <tr>
 <td>nominal_conversion_rate</td>
 <td><a href="#quotation">Quotation</a></td>
-<td></td>
+<td>Курс конвертации для замещающих облигаций</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3449,7 +3149,7 @@
 <tr>
 <td>initial_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Гарантийное обеспечение для фьючерса</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3584,130 +3284,17 @@
 <tr>
 <td>TIME_IN_FORCE_DAY</td>
 <td>1</td>
-<td>заявка действует до конца торгового дня. значение по умолчанию</td>
+<td>Заявка действует до конца торгового дня. значение по умолчанию</td>
 </tr>
 <tr>
 <td>TIME_IN_FORCE_FILL_AND_KILL</td>
 <td>2</td>
-<td>заявка исполнена(возможно частично) и уничтожена.</td>
+<td>Заявка исполнена(возможно частично) и уничтожена</td>
 </tr>
 <tr>
 <td>TIME_IN_FORCE_FILL_OR_KILL</td>
 <td>3</td>
-<td>заявка исполнения полностью или уничтожена</td>
-</tr>
-</tbody>
-</table>
-<h4 id="orderstatestreamresponsemarkertype">OrderStateStreamResponse.MarkerType</h4>
-<p>BROKER - сделки банка при рассплитовке валюты
-CHAT - ставим, когда исполняем поручение клиента, полученное по чату
-PAPER - ставим, когда исполняем поручение клиента, полученное на бумаге
-MAGRIN - принудительное закрытие позиций
-TKBNM - сделки по управлению ликвидностью (размещение свободных денег банка, привлечение денег)
-SHORT - сделки репо по привлечению у клиентов бумаг, когда мы платим клиентам 0,5% годовых
-SPECMM - перенос временно непокрытых позиций.
-PO**** - сделки от капитала, судя по клиентскому коду</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MARKER_UNKNOWN</td>
-<td>0</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_BROKER</td>
-<td>1</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_CHAT</td>
-<td>2</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_PAPER</td>
-<td>3</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_MARGIN</td>
-<td>4</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_TKBNM</td>
-<td>5</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_SHORT</td>
-<td>6</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_SPECMM</td>
-<td>7</td>
-<td>none</td>
-</tr>
-<tr>
-<td>MARKER_PO</td>
-<td>8</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<h4 id="orderstatestreamresponsestatuscauseinfo">OrderStateStreamResponse.StatusCauseInfo</h4>
-<p>Информация по статусу заявки</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CAUSE_CANCELLED_BY_CLIENT</td>
-<td>0</td>
-<td>Отменена клиентом.</td>
-</tr>
-<tr>
-<td>CAUSE_CANCELLED_BY_EXCHANGE</td>
-<td>1</td>
-<td>Отменена Биржей.</td>
-</tr>
-<tr>
-<td>CAUSE_CANCELLED_NOT_ENOUGH_POSITION</td>
-<td>2</td>
-<td>Недостаточно средств.</td>
-</tr>
-<tr>
-<td>CAUSE_CANCELLED_BY_CLIENT_BLOCK</td>
-<td>3</td>
-<td>Клиент заблокирован.</td>
-</tr>
-<tr>
-<td>CAUSE_REJECTED_BY_BROKER</td>
-<td>4</td>
-<td>Отклонена бокером.</td>
-</tr>
-<tr>
-<td>CAUSE_REJECTED_BY_EXCHANGE</td>
-<td>5</td>
-<td>Отклонена Биржей.</td>
-</tr>
-<tr>
-<td>CAUSE_CANCELLED_BY_BROKER</td>
-<td>6</td>
-<td>Отменена бокером.</td>
+<td>Заявка исполнена полностью или уничтожена, недоступно для срочного рынка</td>
 </tr>
 </tbody>
 </table>

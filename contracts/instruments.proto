@@ -1070,7 +1070,7 @@ message GetBrandsResponse {
 }
 
 message GetAssetFundamentalsRequest {
-  repeated string assets = 1 [(google.api.field_behavior) = REQUIRED]; //Массив идентификаторов активов.
+  repeated string assets = 1 [(google.api.field_behavior) = REQUIRED]; //Массив идентификаторов активов (не более 100 шт.).
 }
 
 message GetAssetFundamentalsResponse {

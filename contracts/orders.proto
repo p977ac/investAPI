@@ -16,7 +16,6 @@ import "google/api/field_behavior.proto";
 service OrdersStreamService {
   //Stream сделок пользователя
   rpc TradesStream(TradesStreamRequest) returns (stream TradesStreamResponse);
-  rpc OrderStateStream(OrderStateStreamRequest) returns (stream OrderStateStreamResponse);
 }
 
 service OrdersService {/* Сервис предназначен для работы с торговыми поручениями:</br> **1**.
@@ -86,7 +85,7 @@ message PostOrderRequest {
   OrderType order_type = 6 [(google.api.field_behavior) = REQUIRED]; //Тип заявки.
   string order_id = 7 [(google.api.field_behavior) = REQUIRED]; //Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.
   string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
-  TimeInForceType time_in_force = 9; //Алгоритм исполнения поручения.
+  TimeInForceType time_in_force = 9; //Алгоритм исполнения поручения, применяется только к лимитной заявке.
   PriceType price_type = 10; //Тип цены.
 }
 
@@ -211,111 +210,36 @@ message GetMaxLotsResponse {
   }
 }
 
-message OrderStateStreamRequest {
-  repeated string accounts = 1; //Идентификаторы счетов.
-}
-
-message OrderStateStreamResponse {
-  oneof payload {
-    OrderState order_state = 1; //Информация об исполнении торгового поручения.
-    Ping ping = 2; //Проверка активности стрима.
-  }
-
-  message OrderState {
-    string order_id = 1; //Биржевой идентификатор заявки.
-    string order_request_id = 2; //Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.
-    string client_code = 3; //Код клиента на бирже.
-    google.protobuf.Timestamp created_at = 4; //Дата и время создания сообщения в часовом поясе UTC.
-    OrderExecutionReportStatus execution_report_status = 5; //Текущий статус заявки.
-    StatusCauseInfo status_info = 6; //Информация по статусу заявки.
-    string ticker = 7; //Тикер инструмента.
-    string class_code = 8; //Класс-код (секция торгов).
-    int32 lot_size = 9; //Лотность инструмента заявки.
-    OrderDirection direction = 10; //Направление заявки.
-    TimeInForceType time_in_force = 11; //Алгоритм исполнения поручения.
-    OrderType order_type = 12; //Тип заявки.
-    string account_id = 13; //Номер счета.
-    MoneyValue initial_order_price = 22; //Начальная цена заявки. Произведение количества запрошенных лотов на цену.
-    MoneyValue order_price = 23; //Цена выставления заявки.
-    MoneyValue amount = 24; //Предрассчитанная стоимость полной заявки.
-    MoneyValue executed_order_price = 25; //Исполненная цена заявки. Произведение средней цены покупки на количество лотов.
-    string currency = 26; //Валюта исполнения.
-    int64 lots_requested = 27; //Запрошено лотов.
-    int64 lots_executed = 28; //Исполнено лотов.
-    int64 lots_left = 29; //Число неисполненных лотов по заявке.
-    int64 lots_cancelled = 30; //Отмененные лоты.
-    MarkerType marker = 31; //Спецсимвол.
-    repeated OrderTrade trades = 33; //Массив сделок.
-    google.protobuf.Timestamp completion_time = 35; //Время исполнения заявки.
-    string exchange = 36; //Код биржи.
-    string instrument_uid = 41; //UID идентификатор инструмента.
-  }
-
-  /*
-BROKER - сделки банка при рассплитовке валюты
-CHAT - ставим, когда исполняем поручение клиента, полученное по чату
-PAPER - ставим, когда исполняем поручение клиента, полученное на бумаге
-MAGRIN - принудительное закрытие позиций
-TKBNM - сделки по управлению ликвидностью (размещение свободных денег банка, привлечение денег)
-SHORT - сделки репо по привлечению у клиентов бумаг, когда мы платим клиентам 0,5% годовых
-SPECMM - перенос временно непокрытых позиций.
-PO**** - сделки от капитала, судя по клиентскому коду
- */
-  enum MarkerType {
-    MARKER_UNKNOWN = 0;
-    MARKER_BROKER = 1;
-    MARKER_CHAT = 2;
-    MARKER_PAPER = 3;
-    MARKER_MARGIN = 4;
-    MARKER_TKBNM = 5;
-    MARKER_SHORT = 6;
-    MARKER_SPECMM = 7;
-    MARKER_PO = 8;
-  }
-
-//Информация по статусу заявки
-  enum StatusCauseInfo {
-    CAUSE_CANCELLED_BY_CLIENT = 0; //Отменена клиентом.
-    CAUSE_CANCELLED_BY_EXCHANGE = 1; //Отменена Биржей.
-    CAUSE_CANCELLED_NOT_ENOUGH_POSITION = 2; //Недостаточно средств.
-    CAUSE_CANCELLED_BY_CLIENT_BLOCK = 3; //Клиент заблокирован.
-    CAUSE_REJECTED_BY_BROKER = 4; //Отклонена бокером.
-    CAUSE_REJECTED_BY_EXCHANGE = 5; //Отклонена Биржей.
-    CAUSE_CANCELLED_BY_BROKER = 6; //Отменена бокером.
-  }
-
-
-}
 
 message GetOrderPriceRequest {
   string account_id = 1; //Номер счета
   string instrument_id = 2; //Идентификатор инструмента, принимает значения Figi или instrument_uid
   Quotation price = 3; //Цена инструмента
-  OrderDirection direction = 12; //Направление заявки.
-  int64 quantity = 13; //Количество лотов.
+  OrderDirection direction = 12; //Направление заявки
+  int64 quantity = 13; //Количество лотов
 }
 
 message GetOrderPriceResponse {
-  MoneyValue total_order_amount = 1;
-  MoneyValue initial_order_amount = 5;
-  int64 lots_requested = 3; //Запрошено лотов.
-  MoneyValue executed_commission = 7;
-  MoneyValue executed_commission_rub = 8;
-  MoneyValue service_commission = 9;
-  MoneyValue deal_commission = 10;
+  MoneyValue total_order_amount = 1; //Итоговая стоимость заявки
+  MoneyValue initial_order_amount = 5; //Стоимость заявки без комиссий, НКД, ГО (для фьючерсов — стоимость контрактов)
+  int64 lots_requested = 3; //Запрошено лотов
+  MoneyValue executed_commission = 7; //Общая комиссия
+  MoneyValue executed_commission_rub = 8; //Общая комиссия в рублях
+  MoneyValue service_commission = 9; //Сервисная комиссия
+  MoneyValue deal_commission = 10; //Комиссия за проведение сделки
 
   oneof instrument_extra {
-    ExtraBond extra_bond = 12;
-    ExtraFuture extra_future = 13;
+    ExtraBond extra_bond = 12; //Дополнительная информация по облигациям
+    ExtraFuture extra_future = 13; //Дополнительная информация по фьючерсам
   }
 
   message ExtraBond {
-    MoneyValue aci_value = 2;
-    Quotation nominal_conversion_rate = 3;
+    MoneyValue aci_value = 2; //Значение НКД (накопленного купонного дохода) на дату
+    Quotation nominal_conversion_rate = 3; //Курс конвертации для замещающих облигаций
   }
 
   message ExtraFuture {
-    MoneyValue initial_margin = 2;
+    MoneyValue initial_margin = 2; //Гарантийное обеспечение для фьючерса
   }
 }
 
@@ -346,7 +270,7 @@ enum OrderExecutionReportStatus {
 
 enum TimeInForceType {
   TIME_IN_FORCE_UNSPECIFIED = 0; //Значение не определено см. TIME_IN_FORCE_DAY
-  TIME_IN_FORCE_DAY = 1; //заявка действует до конца торгового дня. значение по умолчанию
-  TIME_IN_FORCE_FILL_AND_KILL = 2; //заявка исполнена(возможно частично) и уничтожена.
-  TIME_IN_FORCE_FILL_OR_KILL = 3; //заявка исполнения полностью или уничтожена
+  TIME_IN_FORCE_DAY = 1; //Заявка действует до конца торгового дня. значение по умолчанию
+  TIME_IN_FORCE_FILL_AND_KILL = 2; //Заявка исполнена(возможно частично) и уничтожена
+  TIME_IN_FORCE_FILL_OR_KILL = 3; //Заявка исполнена полностью или уничтожена, недоступно для срочного рынка
 }

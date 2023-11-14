@@ -366,7 +366,7 @@ message GetDividendsForeignIssuerResponse {
 message GenerateDividendsForeignIssuerReportRequest {
   string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта клиента.
   google.protobuf.Timestamp from = 2 [(google.api.field_behavior) = REQUIRED]; //Начало периода (по UTC).
-  google.protobuf.Timestamp to = 3 [(google.api.field_behavior) = REQUIRED]; //Окончание периода (по UTC).
+  google.protobuf.Timestamp to = 3 [(google.api.field_behavior) = REQUIRED]; //Окончание периода (по UTC), как правило, возможно сформировать отчет по дату, на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года.
 }
 
 // Объект запроса сформированного отчёта "Справка о доходах за пределами РФ".
