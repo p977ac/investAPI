@@ -1320,6 +1320,33 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    Перевод цены облигации, у которой валюта номинала отлична от валюты расчетов
+  </a>
+  
+    <nav class="md-nav" aria-label="Перевод цены облигации, у которой валюта номинала отлична от валюты расчетов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rate" class="md-nav__link">
+    Определяется курс rate валюты номинала к валюте расчетов:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Цена в пунктах переводится в валюту:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     Перевод цены фьючерса в валюту
   </a>
   
@@ -1331,7 +1358,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     В каких параметрах методов используются пункты цены?
   </a>
   
@@ -1374,8 +1401,30 @@
 <p><strong>nominal</strong> — номинал облигации.</p>
 </li>
 </ul>
+<h3 id="_3">Перевод цены облигации, у которой валюта номинала отлична от валюты расчетов</h3>
+<p>Для облигаций, ралюта расчета которых отличается от валюты номинала, применяется следующий порядок перевода цены из пунктов в валюту:</p>
+<h4 id="rate">Определяется курс <code>rate</code> валюты номинала к валюте расчетов:</h4>
+<blockquote>
+<p><strong>rate_f_v</strong> / <strong>rate_s</strong></p>
+</blockquote>
+<p>Где</p>
+<p><strong>rate_f_v</strong> - курс ЦБ валюты номинала к рублю (для рубля 1);</p>
+<p><strong>rate_f_v</strong> - курс ЦБ валюты номинала к рублю (для рубля 1);</p>
+<h4 id="_4">Цена в пунктах переводится в валюту:</h4>
+<blockquote>
+<p><strong>price</strong> * <strong>rate</strong> / 100 * <strong>nominal</strong></p>
+</blockquote>
+<p>Где</p>
+<ul>
+<li>
+<p><strong>price</strong> — текущая котировка ценной бумаги;</p>
+</li>
+<li>
+<p><strong>nominal</strong> — номинал облигации.</p>
+</li>
+</ul>
 <p><a name="futures"></a></p>
-<h3 id="_3">Перевод цены фьючерса в валюту</h3>
+<h3 id="_5">Перевод цены фьючерса в валюту</h3>
 <p>Стоимость фьючерсов так же предоставляется в пунктах, для пересчёта можно воспользоваться формулой:</p>
 <blockquote>
 <p><strong>price</strong> / <strong>min_price_increment</strong> * <strong>min_price_increment_amount</strong></p>
@@ -1395,7 +1444,7 @@
 <p>Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
 можно при помощи метода: <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. Подробнее про срочный
 рынок читайте <a href="https://help.tinkoff.ru/forts/">тут</a></p>
-<h2 id="_4">В каких параметрах методов используются пункты цены?</h2>
+<h2 id="_6">В каких параметрах методов используются пункты цены?</h2>
 <table>
 <thead>
 <tr>
