@@ -1359,6 +1359,26 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    Конвертация цены
+  </a>
+  
+    <nav class="md-nav" aria-label="Конвертация цены">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Методы, поддерживающие конвертацию
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     В каких параметрах методов используются пункты цены?
   </a>
   
@@ -1402,7 +1422,7 @@
 </li>
 </ul>
 <h3 id="_3">Перевод цены облигации, у которой валюта номинала отлична от валюты расчетов</h3>
-<p>Для облигаций, ралюта расчета которых отличается от валюты номинала, применяется следующий порядок перевода цены из пунктов в валюту:</p>
+<p>Для облигаций, валюта расчета которых отличается от валюты номинала, применяется следующий порядок перевода цены из пунктов в валюту:</p>
 <h4 id="rate">Определяется курс <code>rate</code> валюты номинала к валюте расчетов:</h4>
 <blockquote>
 <p><strong>rate_f_v</strong> / <strong>rate_s</strong></p>
@@ -1444,7 +1464,27 @@
 <p>Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
 можно при помощи метода: <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. Подробнее про срочный
 рынок читайте <a href="https://help.tinkoff.ru/forts/">тут</a></p>
-<h2 id="_6">В каких параметрах методов используются пункты цены?</h2>
+<h2 id="_6">Конвертация цены</h2>
+<p>В TINKOFF INVEST API реализован параметр <code>PriceType</code>, позволяющий передавать и получать цены по облигациям и фьючерсам в
+любом удобном формате: в пунктах или в валюте. Конвертация цен происходит на стороне API.</p>
+<p><strong>Важно!!!</strong> При подаче поручения в случае конвертации цена округляется до <a href="https://p977ac.github.io/investAPI/faq_marketdata/#_11">шага цены</a>
+в лучшую для клиента сторону. При передаче ответа округления не производится.</p>
+<h3 id="_7">Методы, поддерживающие конвертацию</h3>
+<ul>
+<li>
+<p><a href="https://p977ac.github.io/investAPI/orders/#postorder">PostOrder</a></p>
+</li>
+<li>
+<p><a href="https://p977ac.github.io/investAPI/orders/#replaceorder">ReplaceOrder</a></p>
+</li>
+<li>
+<p><a href="https://p977ac.github.io/investAPI/sandbox/#postsandboxorder">PostSandboxOrder</a></p>
+</li>
+<li>
+<p><a href="https://p977ac.github.io/investAPI/sandbox/#replacesandboxorder">ReplaceSandboxOrder</a></p>
+</li>
+</ul>
+<h2 id="_8">В каких параметрах методов используются пункты цены?</h2>
 <table>
 <thead>
 <tr>
