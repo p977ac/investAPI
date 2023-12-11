@@ -14,7 +14,7 @@
     
     
       
-        <title>Points - TINKOFF INVEST API</title>
+        <title>Цены облигаций и фьючерсов - TINKOFF INVEST API</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Points
+              Цены облигаций и фьючерсов
             
           </span>
         </div>
@@ -467,12 +467,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Полезная информация
@@ -601,6 +603,81 @@
       <a href="../stream/" class="md-nav__link">
         Stream-соединения
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Цены облигаций и фьючерсов
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Цены облигаций и фьючерсов
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Цены облигаций и фьючерсов
+  </a>
+  
+    <nav class="md-nav" aria-label="Цены облигаций и фьючерсов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Перевод цены облигации в валюту
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Перевод цены фьючерса в валюту
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    В каких параметрах методов используются пункты цены?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1320,33 +1397,6 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    Перевод цены облигации, у которой валюта номинала отлична от валюты расчетов
-  </a>
-  
-    <nav class="md-nav" aria-label="Перевод цены облигации, у которой валюта номинала отлична от валюты расчетов">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rate" class="md-nav__link">
-    Определяется курс rate валюты номинала к валюте расчетов:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Цена в пунктах переводится в валюту:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
     Перевод цены фьючерса в валюту
   </a>
   
@@ -1358,27 +1408,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Конвертация цены
-  </a>
-  
-    <nav class="md-nav" aria-label="Конвертация цены">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    Методы, поддерживающие конвертацию
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     В каких параметрах методов используются пункты цены?
   </a>
   
@@ -1401,7 +1431,7 @@
                   </a>
                 
                 
-                  <h1>Points</h1>
+                  <h1>Цены облигаций и фьючерсов</h1>
                 
                 <h2 id="_1">Цены облигаций и фьючерсов</h2>
 <p>Цены облигаций и фьючерсов в TINKOFF INVEST API предоставляются в пунктах. Методика расчёта стоимости
@@ -1421,36 +1451,9 @@
 <p><strong>nominal</strong> — номинал облигации.</p>
 </li>
 </ul>
-<h3 id="_3">Перевод цены облигации, у которой валюта номинала отлична от валюты расчетов</h3>
-<p>Для облигаций, валюта расчета которых отличается от валюты номинала, применяется следующий порядок перевода цены из пунктов в валюту:</p>
-<h4 id="rate">Определяется курс <code>rate</code> валюты номинала к валюте расчетов:</h4>
-<blockquote>
-<p><strong>rate_f_v</strong> / <strong>rate_s</strong></p>
-</blockquote>
-<p>Где</p>
-<ul>
-<li>
-<p><strong>rate_f_v</strong> - курс ЦБ валюты номинала к рублю (для рубля 1);</p>
-</li>
-<li>
-<p><strong>rate_s</strong> - курс ЦБ валюты расчетов к рублю (для рубля 1);</p>
-</li>
-</ul>
-<h4 id="_4">Цена в пунктах переводится в валюту:</h4>
-<blockquote>
-<p><strong>price</strong> * <strong>rate</strong> / 100 * <strong>nominal</strong></p>
-</blockquote>
-<p>Где</p>
-<ul>
-<li>
-<p><strong>price</strong> — текущая котировка ценной бумаги;</p>
-</li>
-<li>
-<p><strong>nominal</strong> — номинал облигации.</p>
-</li>
-</ul>
+<p><strong>Важно!!!</strong> Если валюта номинала отличается от валюты расчетов, при переводе используется курс валюты номинала к валюте расчетов, установлоенный ЦБ.</p>
 <p><a name="futures"></a></p>
-<h3 id="_5">Перевод цены фьючерса в валюту</h3>
+<h3 id="_3">Перевод цены фьючерса в валюту</h3>
 <p>Стоимость фьючерсов так же предоставляется в пунктах, для пересчёта можно воспользоваться формулой:</p>
 <blockquote>
 <p><strong>price</strong> / <strong>min_price_increment</strong> * <strong>min_price_increment_amount</strong></p>
@@ -1467,30 +1470,13 @@
 <p><strong>min_price_increment_amount</strong> — стоимость шага цены.</p>
 </li>
 </ul>
+<p><strong>Важно!!!</strong> Во многих методах TINKOFF INVEST API ответ по операциям с фьючерсами может возвращаться в валюте цены.
+Значения в валюте пересчитываются исходя из текущей стоимости шага цены, которая меняется.
+Таким образом стоимость в пунктах остается неизменной, а переоценка в валюте расчетов зависит от установленных биржей параметров на текущий момент.</p>
 <p>Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
 можно при помощи метода: <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. Подробнее про срочный
 рынок читайте <a href="https://help.tinkoff.ru/forts/">тут</a></p>
-<h2 id="_6">Конвертация цены</h2>
-<p>В TINKOFF INVEST API реализован параметр <code>PriceType</code>, позволяющий передавать и получать цены по облигациям и фьючерсам в
-любом удобном формате: в пунктах или в валюте. Конвертация цен происходит на стороне API.</p>
-<p><strong>Важно!!!</strong> При подаче поручения в случае конвертации цена заявки округляется до <a href="https://p977ac.github.io/investAPI/faq_marketdata/#_11">шага цены</a>
-в лучшую для клиента сторону (в большую при продаже, в мешьшую при покупке). При передаче ответа округление параметров не производится.</p>
-<h3 id="_7">Методы, поддерживающие конвертацию</h3>
-<ul>
-<li>
-<p><a href="https://p977ac.github.io/investAPI/orders/#postorder">PostOrder</a></p>
-</li>
-<li>
-<p><a href="https://p977ac.github.io/investAPI/orders/#replaceorder">ReplaceOrder</a></p>
-</li>
-<li>
-<p><a href="https://p977ac.github.io/investAPI/sandbox/#postsandboxorder">PostSandboxOrder</a></p>
-</li>
-<li>
-<p><a href="https://p977ac.github.io/investAPI/sandbox/#replacesandboxorder">ReplaceSandboxOrder</a></p>
-</li>
-</ul>
-<h2 id="_8">В каких параметрах методов используются пункты цены?</h2>
+<h2 id="_4">В каких параметрах методов используются пункты цены?</h2>
 <table>
 <thead>
 <tr>
@@ -1526,9 +1512,9 @@
 <tr>
 <td align="left">Orders</td>
 <td align="left">PostOrder</td>
-<td align="left">Входные параметры</td>
+<td align="left">Все параметры</td>
 <td align="left">В валюте расчётов</td>
-<td align="left">В валюте расчётов</td>
+<td align="left">В валюте расчётов или в пунктах цены в зависимости от <a href="https://russianinvestments.github.io/investAPI/orders/#pricetype">типа цены</a></td>
 </tr>
 <tr>
 <td align="left">StopOrders</td>
@@ -1560,7 +1546,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Points comments"
+            issue-term="Цены облигаций и фьючерсов comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1576,6 +1562,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../stream/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Stream-соединения" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Stream-соединения
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ответы на частые вопросы" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Ответы на частые вопросы
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
