@@ -3789,6 +3789,7 @@
 </li>
 </ul>
 <h4 id="getassetreports">GetAssetReports</h4>
+<p>Метод получения расписания выхода отчетностей эмитентов</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getassetreportsrequest">GetAssetReportsRequest</a></p>
@@ -3798,6 +3799,7 @@
 </li>
 </ul>
 <h4 id="getconsensusforecasts">GetConsensusForecasts</h4>
+<p>Метод получения мнения аналитиков по инструменту</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getconsensusforecastsrequest">GetConsensusForecastsRequest</a></p>
@@ -3807,6 +3809,7 @@
 </li>
 </ul>
 <h4 id="getforecastby">GetForecastBy</h4>
+<p>Метод получения прогнозов инвестдомов по инструменту</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getforecastrequest">GetForecastRequest</a></p>
@@ -4210,6 +4213,7 @@
 <!-- end HasFields -->
 
 <h4 id="getbondeventsrequest">GetBondEventsRequest</h4>
+<p>События по облигации.</p>
 <table>
 <thead>
 <tr>
@@ -4237,7 +4241,7 @@
 <tr>
 <td>type</td>
 <td><a href="#getbondeventsrequesteventtype">GetBondEventsRequest.EventType</a></td>
-<td></td>
+<td>Тип события</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4249,6 +4253,7 @@
 <!-- end HasFields -->
 
 <h4 id="getbondeventsresponse">GetBondEventsResponse</h4>
+<p>Объект передачи информации о событии облигации.</p>
 <table>
 <thead>
 <tr>
@@ -4285,107 +4290,107 @@
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td></td>
+<td>Идентификатор инструмента</td>
 </tr>
 <tr>
 <td>event_number</td>
 <td><a href="#int32">int32</a></td>
-<td></td>
+<td>Номер события для данного типа события</td>
 </tr>
 <tr>
 <td>event_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Дата события</td>
 </tr>
 <tr>
 <td>event_type</td>
 <td><a href="#getbondeventsrequesteventtype">GetBondEventsRequest.EventType</a></td>
-<td></td>
+<td>Тип события</td>
 </tr>
 <tr>
 <td>event_total_vol</td>
 <td><a href="#quotation">Quotation</a></td>
-<td></td>
+<td>Полное количество бумаг, задействованных в событии</td>
 </tr>
 <tr>
 <td>fix_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Дата фиксации владельцев для участия в событии</td>
 </tr>
 <tr>
 <td>rate_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Дата определения даты либо факта события</td>
 </tr>
 <tr>
 <td>default_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Дата дефолта (если применимо)</td>
 </tr>
 <tr>
 <td>real_pay_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Дата реального исполнения обязательства</td>
 </tr>
 <tr>
 <td>pay_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Дата выплаты</td>
 </tr>
 <tr>
 <td>pay_one_bond</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Выплата на одну облигацию</td>
 </tr>
 <tr>
 <td>money_flow_val</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td></td>
+<td>Выплаты на все бумаги, задействованные в событии</td>
 </tr>
 <tr>
 <td>execution</td>
 <td><a href="#string">string</a></td>
-<td></td>
+<td>Признак исполнения</td>
 </tr>
 <tr>
 <td>operation_type</td>
 <td><a href="#string">string</a></td>
-<td></td>
+<td>Тип операции</td>
 </tr>
 <tr>
 <td>value</td>
 <td><a href="#quotation">Quotation</a></td>
-<td></td>
+<td>Стоимость операции (ставка купона, доля номинала, цена выкупа или коэффициент конвертации)</td>
 </tr>
 <tr>
 <td>note</td>
 <td><a href="#string">string</a></td>
-<td></td>
+<td>Примечание</td>
 </tr>
 <tr>
 <td>convert_to_fin_tool_id</td>
 <td><a href="#string">string</a></td>
-<td></td>
+<td>ID выпуска бумаг, в который произведена конвертация (для конвертаций)</td>
 </tr>
 <tr>
 <td>coupon_start_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Начало купонного периода</td>
 </tr>
 <tr>
 <td>coupon_end_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td></td>
+<td>Окончание купонного периода</td>
 </tr>
 <tr>
 <td>coupon_period</td>
 <td><a href="#int32">int32</a></td>
-<td></td>
+<td>Купонный период</td>
 </tr>
 <tr>
 <td>coupon_interest_rate</td>
 <td><a href="#quotation">Quotation</a></td>
-<td></td>
+<td>Ставка купона, процентов годовых</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -7814,9 +7819,11 @@
 <!-- end HasFields -->
 
 <h4 id="indicativesrequest">IndicativesRequest</h4>
+<p>Запрос справочника индексов и товаров</p>
 <!-- end HasFields -->
 
 <h4 id="indicativesresponse">IndicativesResponse</h4>
+<p>Справочник индексов и товаров</p>
 <table>
 <thead>
 <tr>
@@ -7841,6 +7848,7 @@
 <!-- end HasFields -->
 
 <h4 id="indicativeresponse">IndicativeResponse</h4>
+<p>Индикатив</p>
 <table>
 <thead>
 <tr>
@@ -8190,6 +8198,7 @@
 <!-- end HasFields -->
 
 <h4 id="getassetfundamentalsrequest">GetAssetFundamentalsRequest</h4>
+<p>Запрос фундаментальных показателей</p>
 <table>
 <thead>
 <tr>
@@ -8214,6 +8223,7 @@
 <!-- end HasFields -->
 
 <h4 id="getassetfundamentalsresponse">GetAssetFundamentalsResponse</h4>
+<p>Фундаментальные показатели</p>
 <table>
 <thead>
 <tr>
@@ -8238,6 +8248,7 @@
 <!-- end HasFields -->
 
 <h4 id="getassetfundamentalsresponsestatisticresponse">GetAssetFundamentalsResponse.StatisticResponse</h4>
+<p>Фундаментальные показатели по активу</p>
 <table>
 <thead>
 <tr>
@@ -8250,7 +8261,7 @@
 <tr>
 <td>asset_uid</td>
 <td><a href="#string">string</a></td>
-<td></td>
+<td>Идентификатор актива</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -8537,6 +8548,7 @@
 <!-- end HasFields -->
 
 <h4 id="getassetreportsrequest">GetAssetReportsRequest</h4>
+<p>Запрос отчетов эмитентов</p>
 <table>
 <thead>
 <tr>
@@ -8571,6 +8583,7 @@
 <!-- end HasFields -->
 
 <h4 id="getassetreportsresponse">GetAssetReportsResponse</h4>
+<p>Отчеты эмитентов</p>
 <table>
 <thead>
 <tr>
@@ -8595,6 +8608,7 @@
 <!-- end HasFields -->
 
 <h4 id="getassetreportsresponsegetassetreportsevent">GetAssetReportsResponse.GetAssetReportsEvent</h4>
+<p>Отчет</p>
 <table>
 <thead>
 <tr>
@@ -8644,6 +8658,7 @@
 <!-- end HasFields -->
 
 <h4 id="getconsensusforecastsrequest">GetConsensusForecastsRequest</h4>
+<p>Запрос консенсус-прогнозов</p>
 <table>
 <thead>
 <tr>
@@ -8668,6 +8683,7 @@
 <!-- end HasFields -->
 
 <h4 id="getconsensusforecastsresponse">GetConsensusForecastsResponse</h4>
+<p>Консенсус-прогнозы</p>
 <table>
 <thead>
 <tr>
@@ -8697,6 +8713,7 @@
 <!-- end HasFields -->
 
 <h4 id="getconsensusforecastsresponseconsensusforecastsitem">GetConsensusForecastsResponse.ConsensusForecastsItem</h4>
+<p>Прогноз</p>
 <table>
 <thead>
 <tr>
@@ -8776,6 +8793,7 @@
 <!-- end HasFields -->
 
 <h4 id="getforecastrequest">GetForecastRequest</h4>
+<p>Запрос прогнозов инвестдомов</p>
 <table>
 <thead>
 <tr>
@@ -8800,6 +8818,7 @@
 <!-- end HasFields -->
 
 <h4 id="getforecastresponse">GetForecastResponse</h4>
+<p>Прогнозы инвестдомов по инструменту</p>
 <table>
 <thead>
 <tr>
@@ -8829,6 +8848,7 @@
 <!-- end HasFields -->
 
 <h4 id="getforecastresponsetargetitem">GetForecastResponse.TargetItem</h4>
+<p>Прогноз</p>
 <table>
 <thead>
 <tr>
@@ -8903,6 +8923,7 @@
 <!-- end HasFields -->
 
 <h4 id="getforecastresponseconsensusitem">GetForecastResponse.ConsensusItem</h4>
+<p>Консенсус-прогноз</p>
 <table>
 <thead>
 <tr>
