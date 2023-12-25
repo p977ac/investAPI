@@ -1861,6 +1861,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    Execution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3395,6 +3409,20 @@
           <li class="md-nav__item">
   <a href="#instrumenttype" class="md-nav__link">
     InstrumentType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    Execution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operationtype" class="md-nav__link">
+    OperationType
   </a>
   
 </li>
@@ -9554,8 +9582,41 @@
 <td>8</td>
 <td>Clearing certificate</td>
 </tr>
+<tr>
+<td>INSTRUMENT_TYPE_INDEX</td>
+<td>9</td>
+<td>Индекс</td>
+</tr>
+<tr>
+<td>INSTRUMENT_TYPE_COMMODITY</td>
+<td>10</td>
+<td>Товар</td>
+</tr>
 </tbody>
 </table>
+<h4 id="execution">Execution</h4>
+<p>Признак исполнения для событий по облигациям
+| Value | Description |
+| ---- | ------ |
+| ED | Execution after Default - платеж выполнен после дефолта (должна быть дата платежа) |
+| ET | Выполнены обязательства по техническому дефолту (платеж выполнен после дефолта) |
+| ES | Выполнены обязательства по соглашению (платеж выполнен после соглашения) |
+| S | Соглашение |
+| T | Технический дефолт |
+| E | Execution - исполнено, платеж выполнен без задержек |
+| D | Default - дефолт |
+| TD | Технически дефолт - задержка платежа более 5 дней, но менее 20 |</p>
+<h4 id="operationtype">OperationType</h4>
+<p>Тип операций для событий по облигациям
+| ---- | ------ |
+| EventType | Description |
+| CPN | Одно из значений: Прочий, Переменный, Фиксированный, Ипотечный, Дисконт, Плавающий, Постоянный |
+| MTY | CA - эмитент реализовал Call-опцион / частичное (амортизационное) погашение
+OA - Call-опциона нет или не реализован / частичное (амортизационное) погашение
+CM - полное погашение оставшегося номинала
+OM - полное погашение оставшегося номинала |
+| CALL | Execution after Default - платеж выполнен после дефолта (должна быть дата платежа) |
+| CONV | пусто |</p>
 <h3 id="_3">Нестандартные типы данных</h3>
 <h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
