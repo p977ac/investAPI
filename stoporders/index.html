@@ -1907,7 +1907,7 @@
 <tr>
 <td>expire_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время окончания действия стоп-заявки в часовом поясе UTC. <strong>Для ExpirationType = GoodTillDate заполнение обязательно</strong>.</td>
+<td>Дата и время окончания действия стоп-заявки в часовом поясе UTC. <strong>Для ExpirationType = GoodTillDate заполнение обязательно, для GoodTillCancel игнорируется</strong>.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
@@ -1933,6 +1933,11 @@
 <td>price_type</td>
 <td><a href="#pricetype">PriceType</a></td>
 <td>Тип цены</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1997,6 +2002,11 @@
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
 <td>Уникальный идентификатор стоп-заявки</td>
+</tr>
+<tr>
+<td>order_request_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
 <td>response_metadata</td>
