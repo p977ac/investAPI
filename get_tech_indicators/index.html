@@ -1179,6 +1179,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#macd" class="md-nav__link">
+    MACD
+  </a>
+  
+    <nav class="md-nav" aria-label="MACD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macd_1" class="md-nav__link">
+    Параметры MACD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsi" class="md-nav__link">
+    Индекс относительной силы (RSI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Индекс относительной силы (RSI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsi_1" class="md-nav__link">
+    Параметры RSI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Общие параметры для индикаторов теханализа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Обобщенная таблица параметров
+  </a>
+  
+    <nav class="md-nav" aria-label="Обобщенная таблица параметров">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Входные параметры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1456,6 +1523,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#macd" class="md-nav__link">
+    MACD
+  </a>
+  
+    <nav class="md-nav" aria-label="MACD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macd_1" class="md-nav__link">
+    Параметры MACD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsi" class="md-nav__link">
+    Индекс относительной силы (RSI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Индекс относительной силы (RSI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsi_1" class="md-nav__link">
+    Параметры RSI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Общие параметры для индикаторов теханализа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Обобщенная таблица параметров
+  </a>
+  
+    <nav class="md-nav" aria-label="Обобщенная таблица параметров">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Входные параметры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1490,7 +1624,6 @@
 то при интервале день она будет считать средние значения за 20 торговых дней, 
 а при интервале час — за 20 торговых часов.</p>
 <p><strong>signal</strong>  — рассчитанные значение в выходных параметрах метода.</p>
-<p>Подробнее про SMA и EMA можно почитать <a href="https://www.tinkoff.ru/invest/help/educate/trading/about/ma-ema/">тут</a></p>
 <h2 id="bb">Линии Боллинджера(BB)</h2>
 <p>Линии Боллинжера используются для измерения волатильности, а так же для понимания относительного максимума и минимума цены.
 Скользящая Средняя (SМА) — находится посередине, является основой и называется медианной полосой Боллинджера.
@@ -1505,6 +1638,104 @@
 <p><strong>lower_band</strong> — нижняя граница;</p>
 <p><strong>middle_band</strong> — скользящее среднее значение;</p>
 <p><strong>upper_band</strong> — верхняя граница;</p>
+<h2 id="macd"><a href="https://www.tinkoff.ru/invest/help/educate/trading/about/macd/">MACD</a></h2>
+<h3 id="macd_1">Параметры MACD</h3>
+<p>Индикатору MACD кроме <code>interval</code> характерны следующие настроечные параметры:</p>
+<p><strong>fast_lenght</strong> — быстрая линия;</p>
+<p><strong>slow_lenght</strong> — медленная линия;</p>
+<p><strong>signal_smoothing</strong> — сглаживание;</p>
+<p>На выходе определяется:</p>
+<p><strong>macd</strong> — рассчитанный MACD;</p>
+<p><strong>signal</strong> — значение сигнальной линии;</p>
+<h2 id="rsi"><a href="https://www.tinkoff.ru/invest/help/educate/trading/about/rsi/">Индекс относительной силы (RSI)</a></h2>
+<h3 id="rsi_1">Параметры RSI</h3>
+<p>Так как RSI рассчитывается на основе EMA, ему характерны те же входные параметры: <code>interval</code> и <code>length</code></p>
+<p>Результатом расчетов будет значение индекса <code>signal</code></p>
+<h2 id="_2">Общие параметры для индикаторов теханализа</h2>
+<p>Для получения индикаторов также необходимо задать следующие параметры:</p>
+<p><strong>from</strong> — начало запрашиваемого периода за который рассчитывается индикатор в часовом поясе UTC;</p>
+<p><strong>to</strong> — окончание запрашиваемого периода в часовом поясе UTC;</p>
+<p><strong>type_of_price</strong> — тип цены, используемый при расчёте индикатора;</p>
+<h2 id="_3">Обобщенная таблица параметров</h2>
+<h3 id="_4">Входные параметры</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Indicator</th>
+<th align="left">interval</th>
+<th align="left">length</th>
+<th align="left">deviation_multiplier</th>
+<th align="left">fast_length</th>
+<th align="left">slow_length</th>
+<th align="left">signal_smoothing</th>
+<th align="left">from</th>
+<th align="left">to</th>
+<th align="left">type_of_price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>SMA</strong></td>
+<td align="left">от минуты до месяца</td>
+<td align="left">от 1 до 1000</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">date</td>
+<td align="left">date</td>
+<td align="left">close\open\high\low\avg</td>
+</tr>
+<tr>
+<td align="left"><strong>EMA</strong></td>
+<td align="left">от минуты до месяца</td>
+<td align="left">от 1 до 1000</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">date</td>
+<td align="left">date</td>
+<td align="left">close\open\high\low\avg</td>
+</tr>
+<tr>
+<td align="left"><strong>BB</strong></td>
+<td align="left">от минуты до месяца</td>
+<td align="left">от 1 до 1000</td>
+<td align="left">от 0 до 50</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">date</td>
+<td align="left">date</td>
+<td align="left">close\open\high\low\avg</td>
+</tr>
+<tr>
+<td align="left"><strong>MACD</strong></td>
+<td align="left">от минуты до месяца</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">от 1 до 1000</td>
+<td align="left">от 1 до 1000</td>
+<td align="left">от 0 до 50</td>
+<td align="left">date</td>
+<td align="left">date</td>
+<td align="left">close\open\high\low\avg</td>
+</tr>
+<tr>
+<td align="left"><strong>RSI</strong></td>
+<td align="left">от минуты до месяца</td>
+<td align="left">от 1 до 1000</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">date</td>
+<td align="left">date</td>
+<td align="left">close\open\high\low\avg</td>
+</tr>
+</tbody>
+</table>
                 
               
               
