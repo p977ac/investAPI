@@ -1609,10 +1609,30 @@
 передать значение в любом другом формате, оно <strong>будет подменено</strong> в сообщениях стрима на сгенерированный API UID. Однозначно связать выставленное поручение не получится.</p>
 <h4 id="_3">Резюме</h4>
 <p>В таблице показаны возможные ответы стрима в зависимости от параметов, переданных в <code>PostOrderRequest</code>:</p>
-<p>| Тип исполнения \ </br> Ключ идемпотентности order_id | Не передан | Передан не в UID |Передан в UID |
-| ----- | ---- | ---- |
-| Не передан или </br> не соответствует типу заявки | order_request_id </br> отсутствует в сообщениях | order_request_id </br> отсутствует в сообщениях | order_request_id </br> отсутствует в сообщениях |
-| Передан и соответствует типу заявки               | в сообщениях order_request_id </br> сгенерированный API | в сообщениях order_request_id </br> сгенерированный API| <strong>в сообщениях order_request_id </br> из PostOrder</strong> |</p>
+<table>
+<thead>
+<tr>
+<th>Тип исполнения \ </br> Ключ идемпотентности order_id</th>
+<th>Не передан</th>
+<th>Передан не в UID</th>
+<th>Передан в UID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Не передан или </br> не соответствует типу заявки</td>
+<td>order_request_id </br> отсутствует в сообщениях</td>
+<td>order_request_id </br> отсутствует в сообщениях</td>
+<td>order_request_id </br> отсутствует в сообщениях</td>
+</tr>
+<tr>
+<td>Передан и соответствует типу заявки</td>
+<td>в сообщениях order_request_id </br> сгенерированный API</td>
+<td>в сообщениях order_request_id </br> сгенерированный API</td>
+<td><strong>в сообщениях order_request_id </br> из PostOrder</strong></td>
+</tr>
+</tbody>
+</table>
 <h3 id="replaceorder">ReplaceOrder</h3>
 <p>Методом замены заявки <a href="/investAPI/orders/#replaceorderrequest">ReplaceOrder</a> пока не поддерживается новая маршрутизация. Будет доработано в ближайшее время.</p>
                 
