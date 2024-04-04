@@ -944,6 +944,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders_state_stream/" class="md-nav__link">
+        Стрим заявок
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1588,8 +1600,14 @@
 </ul>
 <h2 id="_4">Методы сервиса операций в песочнице</h2>
 <ul>
-<li><a href="/investAPI/sandbox#getdividendsforeignissuer">GetDividendsForeignIssuer</a> - получение отчёта "Справка о доходах за пределами РФ";<br />
-Обращаем ваше внимание, что в данном методе песочницы будет возвращать:</li>
+<li>
+<p><a href="/investAPI/sandbox/#getsandboxoperations">GetSandboxOperations</a> и <a href="/investAPI/sandbox/#getsandboxoperationsbycursor">GetSandboxOperationsByCursor</a> 
+в <code>OperationType</code> поддерживают фильтрацию только по типам <code>OPERATION_TYPE_BUY</code> и <code>OPERATION_TYPE_SELL</code>.</p>
+</li>
+<li>
+<p><a href="/investAPI/sandbox#getdividendsforeignissuer">GetDividendsForeignIssuer</a> - получение отчёта "Справка о доходах за пределами РФ";<br />
+Обращаем ваше внимание, что в данном методе песочницы всегда будет возвращаться пустой ответ:</p>
+</li>
 </ul>
 <pre><code>&quot;div_foreign_issuer_report&quot;: {     
         &quot;dividends_foreign_issuer_report&quot;: [],
@@ -1601,7 +1619,7 @@
 </code></pre>
 <ul>
 <li><a href="/investAPI/sandbox#getbrokerreport">GetBrokerReport</a> - получение брокерского отчёта;<br />
-Обращаем ваше внимание, что в данном методе песочницы будет возвращать:</li>
+Обращаем ваше внимание, что в данном методе песочницы всегда будет возвращаться пустой ответ:</li>
 </ul>
 <pre><code>&quot;get_broker_report_response&quot;: {
     &quot;broker_report&quot;: [],
