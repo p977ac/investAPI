@@ -251,7 +251,7 @@
   
     <li class="md-nav__item">
       <a href="../limits/" class="md-nav__link">
-        Лимитная политика
+        Лимиты
       </a>
     </li>
   
@@ -335,7 +335,7 @@
   
     <li class="md-nav__item">
       <a href="../deadlines/" class="md-nav__link">
-        Дедлайны запросов
+        Время исполнения запросов
       </a>
     </li>
   
@@ -347,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../robot_contest/" class="md-nav__link">
-        Таблица конкурсных работ
+        Конкурсные работы
       </a>
     </li>
   
@@ -371,7 +371,7 @@
   
     <li class="md-nav__item">
       <a href="../cases/" class="md-nav__link">
-        Описание наиболее популярных кейсов
+        Популярные кейсы и их решение
       </a>
     </li>
   
@@ -425,7 +425,7 @@
   
     <li class="md-nav__item">
       <a href="../grpc/" class="md-nav__link">
-        GRPC
+        gRPC
       </a>
     </li>
   
@@ -449,7 +449,7 @@
   
     <li class="md-nav__item">
       <a href="../swagger/" class="md-nav__link">
-        Как пользоваться Swagger?
+        Использование Swagger
       </a>
     </li>
   
@@ -938,7 +938,7 @@
   
     <li class="md-nav__item">
       <a href="../table_order_currency/" class="md-nav__link">
-        Таблица параметров возвращающих валюту или пункты
+        Таблица параметров, возвращающих валюту или пункты
       </a>
     </li>
   
@@ -1425,7 +1425,7 @@
 <td>404</td>
 <td>Unimplemented</td>
 <td>404 Not Found</td>
-<td>Неверный URL запроса</td>
+<td>Неверный URL запроса или переданный параметр не определен</td>
 </tr>
 <tr>
 <td>405</td>
@@ -1437,13 +1437,13 @@
 <td>408</td>
 <td></td>
 <td>408 Request Timeout</td>
-<td>Превышено время ожидания ответа от сервера, попробуйте повторить запрос позже</td>
+<td>Время передачи запроса клиентом истекло. Проверьте работу приложения</td>
 </tr>
 <tr>
 <td>415</td>
 <td>Internal</td>
 <td>415 Unsupported Media Type</td>
-<td>Неверный тип данных</td>
+<td>Неверный тип данных, проверьте формат передаваемого сообщения</td>
 </tr>
 <tr>
 <td>426</td>
@@ -1461,13 +1461,13 @@
 <td>500</td>
 <td>INTERNAL, UNKNOWN, DATA_LOSS, Unknown</td>
 <td>500 Internal Server Error</td>
-<td>Внутренняя ошибка сервера</td>
+<td>Внутренняя ошибка сервера, попробуйте повторить запрос позже</td>
 </tr>
 <tr>
 <td>501</td>
 <td>UNIMPLEMENTED</td>
 <td>501 Not Implemented</td>
-<td></td>
+<td>Метод не реализован, проверьте путь вызова в запросе</td>
 </tr>
 <tr>
 <td>503</td>
@@ -1479,7 +1479,7 @@
 <td>504</td>
 <td>DEADLINE_EXCEEDED</td>
 <td>504 Gateway Timeout</td>
-<td>Нет ответа от шлюза или прокси-сервера</td>
+<td>Превышен интервал ожидания ответа от сервера, попробуйте повторить запрос позже</td>
 </tr>
 </tbody>
 </table>
