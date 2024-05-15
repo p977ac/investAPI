@@ -1392,6 +1392,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#resultsubscriptionstatus" class="md-nav__link">
+    ResultSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errordetail" class="md-nav__link">
+    ErrorDetail
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1422,20 +1436,6 @@
           <li class="md-nav__item">
   <a href="#quotation" class="md-nav__link">
     Quotation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resultsubscriptionstatus" class="md-nav__link">
-    ResultSubscriptionStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#errordetail" class="md-nav__link">
-    ErrorDetail
   </a>
   
 </li>
@@ -2287,6 +2287,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#resultsubscriptionstatus" class="md-nav__link">
+    ResultSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errordetail" class="md-nav__link">
+    ErrorDetail
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2317,20 +2331,6 @@
           <li class="md-nav__item">
   <a href="#quotation" class="md-nav__link">
     Quotation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resultsubscriptionstatus" class="md-nav__link">
-    ResultSubscriptionStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#errordetail" class="md-nav__link">
-    ErrorDetail
   </a>
   
 </li>
@@ -4046,6 +4046,57 @@
 </tr>
 </tbody>
 </table>
+<h4 id="resultsubscriptionstatus">ResultSubscriptionStatus</h4>
+<p>Результат подписки</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Статус подписки не определен.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_OK</td>
+<td>1</td>
+<td>Подписка успешно установлена.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_ERROR</td>
+<td>13</td>
+<td>Ошибка подписки</td>
+</tr>
+</tbody>
+</table>
+<h4 id="errordetail">ErrorDetail</h4>
+<p>Описание ошибки</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td><a href="#string">string</a></td>
+<td>Код ошибки.</td>
+</tr>
+<tr>
+<td>message</td>
+<td><a href="#string">string</a></td>
+<td>Описание ошибки.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="_4">Про тип цены</h3>
 <p>В TINKOFF INVEST API ответ в методах для фьючерсов и облигаций может возвращаться как в валюте расчетов, так и в пунктах цены.
 Стоимость пункта может меняться в зависимости от курсовой разницы.
@@ -4099,57 +4150,6 @@
 <td>nano</td>
 <td><a href="#int32">int32</a></td>
 <td>Дробная часть суммы, может быть отрицательным числом</td>
-</tr>
-</tbody>
-</table>
-<h4 id="resultsubscriptionstatus">ResultSubscriptionStatus</h4>
-<p>Результат подписки</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
-<td>0</td>
-<td>Статус подписки не определен.</td>
-</tr>
-<tr>
-<td>SUBSCRIPTION_STATUS_OK</td>
-<td>1</td>
-<td>Подписка успешно установлена.</td>
-</tr>
-<tr>
-<td>SUBSCRIPTION_STATUS_ERROR</td>
-<td>13</td>
-<td>Ошибка подписки</td>
-</tr>
-</tbody>
-</table>
-<h4 id="errordetail">ErrorDetail</h4>
-<p>Описание ошибки</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>code</td>
-<td><a href="#string">string</a></td>
-<td>Код ошибки.</td>
-</tr>
-<tr>
-<td>message</td>
-<td><a href="#string">string</a></td>
-<td>Описание ошибки.</td>
 </tr>
 </tbody>
 </table>
