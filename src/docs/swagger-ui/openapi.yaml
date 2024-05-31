@@ -13,8 +13,6 @@ servers:
     description: Работа с биржей
   - url: https://sandbox-invest-public-api.tinkoff.ru/rest/
     description: Работа в песочнице
-  - url: https://invest-public-api-qa.tinkoff.ru/piapi-grpc-gateway/
-    description: Тестовый контур
 security:
   - Bearer: []
 externalDocs:
