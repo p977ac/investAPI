@@ -1589,12 +1589,12 @@
                 
                 
                 <h1 id="_1">Асинхронный метод выставления заявок</h1>
-<p>С целью уменьшить latency доставки торговых поручений до биржи в T-Invest API реализован асинхронный метод выставления поручений.
-При подачи поручений асинхронным методом брокер не дожидается подтверждения от бирже об успешном статусе выставления заявки и 
+<p>С целью уменьшить latency доставки торговых поручений до биржи в T-Invest API реализован асинхронный метод выставления заявок.
+При подачи поручений асинхронным методом брокер не дожидается подтверждения от биржи об успешном статусе выставления заявки и 
 присвоении ей биржевого номера. При работе с асинхронным методом есть ряд особенностей.</p>
 <h2 id="postorderasync">PostOrderAsync запрос</h2>
 <p>Входные параметры асинхронного метода идентичны <a href="https://russianinvestments.github.io/investAPI/orders/#postorder">PostOrder</a>.
-При этом есть особенности.</p>
+При этом есть особенности:</p>
 <p><a href="https://russianinvestments.github.io/investAPI/head-orders/#_5">Идентификатор ключа идемпотентности</a> <code>order_id</code> является обязательным
 и должен быть передан в UUID формате.</p>
 <h2 id="postorderasync_1">PostOrderAsync ответ</h2>
@@ -1604,10 +1604,6 @@
 <h3 id="_3">Успешное выставление заявки</h3>
 <p>Если проверки пройдены и заявка передана на биржу, то вернется <a href="https://russianinvestments.github.io/investAPI/orders/#postorderasyncresponse">ответ</a>, где
 <code>order_request_id</code> - ключ идемпотентности, переданный в запросе в виде <code>order_id</code>.</p>
-<blockquote>
-<p><strong>Важно</strong><br>
-</p>
-</blockquote>
 <blockquote>
 <p><strong>Важно</strong><br>
 В ответе метода нет биржевого идентификатора.  <code>trade_intent_id</code> — внутренний идентификатор брокера. </p>
@@ -1622,8 +1618,8 @@
 <p>Изменение статуса торгового поручения можно подписавшись на <a href="https://russianinvestments.github.io/investAPI/orders_state_stream/">Стрим заявок</a>.
 <code>order_request_id</code> в сообщениях стрима соответствует <code>order_request_id</code> в ответе PostOrderAsync, <code>order_id</code> — биржевому номеру заявки.
 Получив из стрима биржевой номер, дальнейшие статусы можно отслеживать методами <a href="https://russianinvestments.github.io/investAPI/orders/#getorderstate">GetOrderState</a>
-и <a href="https://russianinvestments.github.io/investAPI/orders/#getorders">GetOrder</a>, а отменить методом <a href="https://russianinvestments.github.io/investAPI/orders/#cancelorder">CancelOrder</a>.
-В ближайших релизах GetOrderState и CancelOrder будут поддерживать работу и по ключу идемпотентности <code>order_request_id</code>.</p>
+и <a href="https://russianinvestments.github.io/investAPI/orders/#getorders">GetOrder</a>, а отменить методом <a href="https://russianinvestments.github.io/investAPI/orders/#cancelorder">CancelOrder</a>.</p>
+<p>В ближайших релизах GetOrderState и CancelOrder будут поддерживать работу и по ключу идемпотентности <code>order_request_id</code>.</p>
                 
               
               
