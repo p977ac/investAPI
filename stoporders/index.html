@@ -571,6 +571,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../extended/" class="md-nav__link">
+        Дилерские торговые сессии
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../held_instruments/" class="md-nav__link">
         Инструменты иностранных эмитентов
       </a>
@@ -1219,14 +1231,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
       
       <label class="md-nav__link" for="__nav_6_6">
         Стоп-заявки
@@ -1236,6 +1246,59 @@
         <label class="md-nav__title" for="__nav_6_6">
           <span class="md-nav__icon md-icon"></span>
           Стоп-заявки
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-signals/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signals/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+      
+      <label class="md-nav__link" for="__nav_6_7">
+        Сигналы
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сигналы" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сигналы
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2001,12 +2064,12 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
+<td>Цена за 1 инструмент биржевой заявки, которая будет выставлена при срабатывании по достижению <code>stop_price</code>. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>stop_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Стоп-цена заявки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
+<td>Стоп-цена заявки за 1 инструмент. При достижении стоп-цены происходит активация стоп-заявки, в результате чего выставляется биржевая заявка. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>direction</td>
@@ -2280,7 +2343,7 @@
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор-идентификатор стоп-заявки.</td>
+<td>Уникальный идентификатор стоп-заявки.</td>
 </tr>
 <tr>
 <td>lots_requested</td>

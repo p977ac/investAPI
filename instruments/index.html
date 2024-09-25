@@ -571,6 +571,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../extended/" class="md-nav__link">
+        Дилерские торговые сессии
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../held_instruments/" class="md-nav__link">
         Инструменты иностранных эмитентов
       </a>
@@ -2367,6 +2379,57 @@
   
   
     <li class="md-nav__item">
+      <a href="../head-signals/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signals/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
+      
+      <label class="md-nav__link" for="__nav_6_7">
+        Сигналы
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сигналы" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сигналы
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../head-stoporders/" class="md-nav__link">
         Описание
       </a>
@@ -3916,7 +3979,7 @@
 </li>
 </ul>
 <h4 id="getassets">GetAssets</h4>
-<p>Получить список активов. Метод работает для всех инструментов, кроме срочных — опционов и фьючерсов.</p>
+<p>Получить список активов. Метод работает для всех инструментов, кроме срочных — фьючерсов и опционов.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#assetsrequest">AssetsRequest</a></p>
@@ -4927,7 +4990,7 @@
 <tr>
 <td>real_exchange</td>
 <td><a href="#realexchange">RealExchange</a></td>
-<td>Реальная площадка исполнения расчётов (биржа). Допустимые значения — <code>REAL_EXCHANGE_MOEX</code>, <code>REAL_EXCHANGE_RTS</code>.</td>
+<td>Реальная площадка исполнения расчётов (биржа).</td>
 </tr>
 <tr>
 <td>direction</td>
@@ -5022,22 +5085,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>min_price_increment</td>
@@ -5087,7 +5150,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>buy_available_flag</td>
@@ -5232,22 +5295,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -5342,7 +5405,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>buy_available_flag</td>
@@ -5517,22 +5580,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -5572,7 +5635,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>buy_available_flag</td>
@@ -5712,22 +5775,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -5792,7 +5855,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>buy_available_flag</td>
@@ -5937,22 +6000,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт </a>.</td>
+<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -6027,7 +6090,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>buy_available_flag</td>
@@ -6182,22 +6245,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -6257,7 +6320,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>buy_available_flag</td>
@@ -6617,22 +6680,22 @@
 <tr>
 <td>dlong</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КСУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КСУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dlong_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://help.tbank.ru/margin-trade/long/risk-rate/">Подробнее про ставки риска в лонг</a>.</td>
+<td>Ставка риска начальной маржи для КПУР лонг. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>dshort_min</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://help.tbank.ru/margin-trade/short/risk-rate/">Подробнее про ставки риска в шорт</a>.</td>
+<td>Ставка риска начальной маржи для КПУР шорт. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5">Подробнее про ставки риска</a>.</td>
 </tr>
 <tr>
 <td>short_enabled_flag</td>
@@ -6672,7 +6735,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>buy_available_flag</td>
@@ -7970,7 +8033,7 @@
 <tr>
 <td>otc_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак внебиржевой ценной бумаги.</td>
+<td>Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструментов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.</td>
 </tr>
 <tr>
 <td>api_trade_available_flag</td>

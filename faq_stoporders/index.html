@@ -571,6 +571,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../extended/" class="md-nav__link">
+        Дилерские торговые сессии
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../held_instruments/" class="md-nav__link">
         Инструменты иностранных эмитентов
       </a>
@@ -1219,14 +1231,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
       
       <label class="md-nav__link" for="__nav_6_6">
         Стоп-заявки
@@ -1236,6 +1246,59 @@
         <label class="md-nav__title" for="__nav_6_6">
           <span class="md-nav__icon md-icon"></span>
           Стоп-заявки
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../head-signals/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signals/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+      
+      <label class="md-nav__link" for="__nav_6_7">
+        Сигналы
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сигналы" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сигналы
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1531,11 +1594,9 @@
                   <h1>FAQ</h1>
                 
                 <h3 id="-">Можно ли узнать, что торговое поручение было создано из стоп-заявки?</h3>
-<p>Сейчас соотнести стоп-заявку с торговым поручением можно только по косвенным
-признакам — тип, количество инструментов, цена и другие. В будущем такая функциональность
-появится.</p>
+<p>Да, возможно. После активации стоп-заявки в <a href="/investAPI/stoporders/#stoporder">ответе</a> начинает возвращаться непустой параметр <code>exchange_order_id</code> - идентификатор биржевой заявки.</p>
 <h3 id="-_1">Можно ли получить информацию об исполненных или снятых стоп-заявках?</h3>
-<p>На текущий момент нет. Планируем реализовать это в будущем. </p>
+<p>Чтобы получить снятые или исполненные стоп-заявки необходимо в запросах задать нужный <a href="/investAPI/stoporders/#stoporderstatusoption">статус</a>.</p>
                 
               
               

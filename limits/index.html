@@ -627,6 +627,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../extended/" class="md-nav__link">
+        Дилерские торговые сессии
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../held_instruments/" class="md-nav__link">
         Инструменты иностранных эмитентов
       </a>
@@ -1296,6 +1308,57 @@
   
   
     <li class="md-nav__item">
+      <a href="../head-signals/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signals/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
+      
+      <label class="md-nav__link" for="__nav_6_7">
+        Сигналы
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сигналы" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сигналы
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../head-stoporders/" class="md-nav__link">
         Описание
       </a>
@@ -1627,6 +1690,11 @@
 <td align="left">gRPC<br/>REST</td>
 <td align="left">100</td>
 </tr>
+<tr>
+<td align="left">Метод <a href="/investAPI/orders/#postorderasync">postOrderAsync</a></td>
+<td align="left">gRPC<br/>REST</td>
+<td align="left">450</td>
+</tr>
 </tbody>
 </table>
 <h2 id="_1">Грейды</h2>
@@ -1637,26 +1705,26 @@
 <tr>
 <th align="left">Лимитный грейд</th>
 <th align="left">Активных stream-соединений</br><a href="/investAPI/head-marketdata/">сервиса котировок</a></th>
-<th align="left">Активных stream-соединений</br><a href="/investAPI/head-orders/">сервиса ордеров</a></th>
+<th align="left">Активных stream-соединений на каждый метод</br><a href="/investAPI/head-orders/">сервиса ордеров</a></th>
 <th align="left">Активных stream-соединений на каждый метод</br><a href="/investAPI/head-operations/">сервиса операций</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">1</td>
-<td align="left">2</td>
+<td align="left">16</td>
 <td align="left">10</td>
 <td align="left">2</td>
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">4</td>
+<td align="left">16</td>
 <td align="left">10</td>
 <td align="left">2</td>
 </tr>
 <tr>
 <td align="left">3</td>
-<td align="left">5</td>
+<td align="left">16</td>
 <td align="left">10</td>
 <td align="left">2</td>
 </tr>
@@ -1681,7 +1749,8 @@
 суммарно по всем трём типам данных. Лимитов на количество подписок в рамках одного стрима на торговые
 статусы инструментов (подписка Info) нет.<br><br>
 В методе <a href="https://russianinvestments.github.io/investAPI/users/#getusertariff">Запросить тариф пользователя</a> лимиты для стрим-соединений могут возвращаться на 1 больше. Это сделано для того, чтобы вы могли переподключить стримы — поэтому мы не рекомендуем использовать максимальное количество из лимита. <br><br>
-Если превысить лимит, вернётся соответствующая ошибка. Превышения не будет, если количество запросов с IP-адреса клиента не превышает 1000 в минуту. Если вы подозреваете, что ваш IP-адрес забанили — обратитесь к нам в поддержку или в <a href="https://t.me/joinchat/VaW05CDzcSdsPULM">Telegram-чат по общим вопросам</a>.</p>
+Если превысить лимит, вернётся соответствующая ошибка. Превышения не будет, если количество запросов с IP-адреса клиента не превышает 1000 в минуту. Если вы подозреваете, что ваш IP-адрес забанили — обратитесь к нам в поддержку или в <a href="https://t.me/joinchat/VaW05CDzcSdsPULM">Telegram-чат по общим вопросам</a>. <br><br>
+Воспользоваться максимальными лимитами по выставленю ордеров получится не всегда из-за задержек на стороне брокера. Увеличение лимита в первую очередь полезно для клиентов, торгующих с разных счетов. Подробнее по производительность читайте на <a href="/investAPI/speedup/">странице</a>.</p>
 </blockquote>
 <p>Счётчик количества стрим-соединений обновляется каждые 2 минуты.</p>
 <p>Лимитный грейд пользователя изменяется раз в сутки после окончания торгов. Для изменения

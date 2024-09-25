@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -1231,12 +1231,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" checked>
       
       <label class="md-nav__link" for="__nav_6_6">
         Стоп-заявки
@@ -1252,11 +1254,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../head-signals/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Описание
       </a>
+      
     </li>
   
 
@@ -1282,14 +1294,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
       
       <label class="md-nav__link" for="__nav_6_7">
         Сигналы
@@ -1305,65 +1315,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Описание
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../head-stoporders/" class="md-nav__link">
         Описание
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#-_1" class="md-nav__link">
-    Выставить стоп-заявку
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-_2" class="md-nav__link">
-    Получить список активных стоп-заявок
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-_3" class="md-nav__link">
-    Отменить стоп-заявку
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1567,35 +1523,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#-_1" class="md-nav__link">
-    Выставить стоп-заявку
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-_2" class="md-nav__link">
-    Получить список активных стоп-заявок
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-_3" class="md-nav__link">
-    Отменить стоп-заявку
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1606,26 +1533,29 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/head-stoporders.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/head-signals.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="-">Сервис работы со стоп-заявками</h1>
-<p>В процессе работы торговый робот может использовать возможности стоп-заявки. </p>
-<p>Стоп-заявка, или стоп-ордер, стоп-приказ — это особый вид торгового поручения, который трансформируется
-в биржевое торговое поручение с заданными параметрами при достижении какого-то условия.</p>
-<p><a href="https://www.tbank.ru/invest/account/help/trade-on-bs/bids/">Подробнее про типы стоп-заявок</a></p>
-<h2 id="-_1">Выставить стоп-заявку</h2>
-<p>Для выставления стоп-заявки используйте метод <a href="/investAPI/stoporders#poststoporder">PostStopOrder</a>.</p>
-<p>Обратите внимание на параметр <code>expiration_type</code> — он отвечает за время жизни (экспирации) заявки.</p>
-<p>Например, значение <code>GoodTillCancel</code> говорит о том, что заявка будет активна до отмены, а <code>GoodTillDate</code> — до определённой даты (параметр <code>expire_date</code>).</p>
-<h2 id="-_2">Получить список активных стоп-заявок</h2>
-<p>Для получения полного списка стоп-заявок рекомендуем использовать метод <a href="/investAPI/stoporders#getstoporders">GetStopOrders</a>.</p>
-<p>Обратите внимание: метод вернёт только стоп-заявки, которые ещё не были конвертированы в 
-реальные торговые поручения. </p>
-<h2 id="-_3">Отменить стоп-заявку</h2>
-<p>Для отмены активной стоп-заявки используйте метод <a href="/investAPI/stoporders#cancelstoporder">CancelStopOrder</a>.</p>
+                <h1 id="_1">Сервис сигналов</h1>
+<p>Сервис сигналов поможет инвесторам найти потенциально выгодные моменты для совершения сделок на бирже 
+или скорректировать позицию по конкретному активу, который уже есть в портфеле. Сигналы в виджете можно разделить на две группы:</p>
+<ul>
+<li>Долгосрочные — инвестиционные идеи от аналитиков, сформированные на основе фундаментального анализа
+конкретной ценной бумаги, то есть на основе оценки экономических, финансовых и политических факторов, которые могут повлиять на цену актива.</li>
+<li>Краткосрочные — инвестиционные идеи, которые автоматически формируются на основе бэктеста, 
+то есть процесса поиска индикаторов технического анализа, которые в прошлом показывали максимальную прибыль для конкретной бумаги.</li>
+</ul>
+<p>Иногда для одной и той же ценной бумаги может быть несколько разных сигналов.
+У них могут быть разные параметры, даже противоположные.
+Это связано с тем, что сигналы создаются независимо друг от друга. 
+В этом случае рекомендуем обращать внимание на длительность сигнала, историческую доходность стратегии, а также самостоятельно анализировать данные.</p>
+<blockquote>
+<p><strong>Важно</strong><br>
+Сигналы не являются индивидуальной инвестиционной рекомендацией,
+ а их высокая прибыльность в прошлом не гарантирует прибыльности в будущем.
+</blockquote>
                 
               
               
@@ -1653,7 +1583,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../signals/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методы" rel="prev">
+        <a href="../faq_marketdata/" class="md-footer__link md-footer__link--prev" aria-label="Назад: FAQ" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1662,14 +1592,14 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Методы
+              FAQ
             </div>
           </div>
         </a>
       
       
         
-        <a href="../stoporders/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Методы" rel="next">
+        <a href="../signals/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Методы" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">

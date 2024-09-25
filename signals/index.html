@@ -14,7 +14,7 @@
     
     
       
-        <title>Описание - T-Invest API</title>
+        <title>Методы - T-Invest API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-" class="md-skip">
+        <a href="#signalservice" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Описание
+              Методы
             
           </span>
         </div>
@@ -1231,12 +1231,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" checked>
       
       <label class="md-nav__link" for="__nav_6_6">
         Стоп-заявки
@@ -1264,11 +1266,196 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../signals/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Методы
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Методы
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signalservice" class="md-nav__link">
+    SignalService
+  </a>
+  
+    <nav class="md-nav" aria-label="SignalService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getstrategies" class="md-nav__link">
+    GetStrategies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignals" class="md-nav__link">
+    GetSignals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сообщения методов
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getstrategiesrequest" class="md-nav__link">
+    GetStrategiesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstrategiesresponse" class="md-nav__link">
+    GetStrategiesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy" class="md-nav__link">
+    Strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignalsrequest" class="md-nav__link">
+    GetSignalsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignalsresponse" class="md-nav__link">
+    GetSignalsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    Signal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategytype" class="md-nav__link">
+    StrategyType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signaldirection" class="md-nav__link">
+    SignalDirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalstate" class="md-nav__link">
+    SignalState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1282,14 +1469,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
       
       <label class="md-nav__link" for="__nav_6_7">
         Сигналы
@@ -1305,65 +1490,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Описание
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../head-stoporders/" class="md-nav__link">
         Описание
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#-_1" class="md-nav__link">
-    Выставить стоп-заявку
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-_2" class="md-nav__link">
-    Получить список активных стоп-заявок
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-_3" class="md-nav__link">
-    Отменить стоп-заявку
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1564,8 +1695,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1574,23 +1703,158 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#-_1" class="md-nav__link">
-    Выставить стоп-заявку
+  <a href="#signalservice" class="md-nav__link">
+    SignalService
+  </a>
+  
+    <nav class="md-nav" aria-label="SignalService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Методы сервиса
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы сервиса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getstrategies" class="md-nav__link">
+    GetStrategies
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#-_2" class="md-nav__link">
-    Получить список активных стоп-заявок
+        
+          <li class="md-nav__item">
+  <a href="#getsignals" class="md-nav__link">
+    GetSignals
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#-_3" class="md-nav__link">
-    Отменить стоп-заявку
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сообщения методов
   </a>
+  
+    <nav class="md-nav" aria-label="Сообщения методов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getstrategiesrequest" class="md-nav__link">
+    GetStrategiesRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getstrategiesresponse" class="md-nav__link">
+    GetStrategiesResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy" class="md-nav__link">
+    Strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignalsrequest" class="md-nav__link">
+    GetSignalsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsignalsresponse" class="md-nav__link">
+    GetSignalsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal" class="md-nav__link">
+    Signal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+    <nav class="md-nav" aria-label="Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategytype" class="md-nav__link">
+    StrategyType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signaldirection" class="md-nav__link">
+    SignalDirection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalstate" class="md-nav__link">
+    SignalState
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Нестандартные типы данных
+  </a>
+  
+    <nav class="md-nav" aria-label="Нестандартные типы данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moneyvalue" class="md-nav__link">
+    MoneyValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotation" class="md-nav__link">
+    Quotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1606,26 +1870,495 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/head-stoporders.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/signals.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="-">Сервис работы со стоп-заявками</h1>
-<p>В процессе работы торговый робот может использовать возможности стоп-заявки. </p>
-<p>Стоп-заявка, или стоп-ордер, стоп-приказ — это особый вид торгового поручения, который трансформируется
-в биржевое торговое поручение с заданными параметрами при достижении какого-то условия.</p>
-<p><a href="https://www.tbank.ru/invest/account/help/trade-on-bs/bids/">Подробнее про типы стоп-заявок</a></p>
-<h2 id="-_1">Выставить стоп-заявку</h2>
-<p>Для выставления стоп-заявки используйте метод <a href="/investAPI/stoporders#poststoporder">PostStopOrder</a>.</p>
-<p>Обратите внимание на параметр <code>expiration_type</code> — он отвечает за время жизни (экспирации) заявки.</p>
-<p>Например, значение <code>GoodTillCancel</code> говорит о том, что заявка будет активна до отмены, а <code>GoodTillDate</code> — до определённой даты (параметр <code>expire_date</code>).</p>
-<h2 id="-_2">Получить список активных стоп-заявок</h2>
-<p>Для получения полного списка стоп-заявок рекомендуем использовать метод <a href="/investAPI/stoporders#getstoporders">GetStopOrders</a>.</p>
-<p>Обратите внимание: метод вернёт только стоп-заявки, которые ещё не были конвертированы в 
-реальные торговые поручения. </p>
-<h2 id="-_3">Отменить стоп-заявку</h2>
-<p>Для отмены активной стоп-заявки используйте метод <a href="/investAPI/stoporders#cancelstoporder">CancelStopOrder</a>.</p>
+                  <h1>Методы</h1>
+                
+                <h2 id="signalservice">SignalService</h2>
+<h3 id="_1">Методы сервиса</h3>
+<h4 id="getstrategies">GetStrategies</h4>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getstrategiesrequest">GetStrategiesRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getstrategiesresponse">GetStrategiesResponse</a></p>
+</li>
+</ul>
+<h4 id="getsignals">GetSignals</h4>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getsignalsrequest">GetSignalsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getsignalsresponse">GetSignalsResponse</a></p>
+</li>
+</ul>
+<!-- range .Methods -->
+<!-- range .Services -->
+
+<h3 id="_2">Сообщения методов</h3>
+<h4 id="getstrategiesrequest">GetStrategiesRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getstrategiesresponse">GetStrategiesResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strategies</td>
+<td>Массив объектов <a href="#strategy">Strategy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="strategy">Strategy</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии.</td>
+</tr>
+<tr>
+<td>strategy_name</td>
+<td><a href="#string">string</a></td>
+<td>Название стратегии.</td>
+</tr>
+<tr>
+<td>strategy_description</td>
+<td><a href="#string">string</a></td>
+<td>Описание стратегии.</td>
+</tr>
+<tr>
+<td>strategy_url</td>
+<td><a href="#string">string</a></td>
+<td>Ссылка на страницу с описанием стратегии.</td>
+</tr>
+<tr>
+<td>strategy_type</td>
+<td><a href="#strategytype">StrategyType</a></td>
+<td>Тип стратегии.</td>
+</tr>
+<tr>
+<td>active_signals</td>
+<td><a href="#int32">int32</a></td>
+<td>Количество активных сигналов.</td>
+</tr>
+<tr>
+<td>total_signals</td>
+<td><a href="#int32">int32</a></td>
+<td>Общее количество сигналов.</td>
+</tr>
+<tr>
+<td>time_in_position</td>
+<td><a href="#int64">int64</a></td>
+<td>Среднее время нахождения сигнала в позиции.</td>
+</tr>
+<tr>
+<td>average_signal_yield</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Средняя доходность сигнала в стратегии.</td>
+</tr>
+<tr>
+<td>average_signal_yield_year</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Средняя доходность сигналов в стратегии за последний год.</td>
+</tr>
+<tr>
+<td>yield</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Доходность стратегии.</td>
+</tr>
+<tr>
+<td>yield_year</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Доходность стратегии за последний год.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getsignalsrequest">GetSignalsRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор сигнала.</td>
+</tr>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии.</td>
+</tr>
+<tr>
+<td>strategy_type</td>
+<td><a href="#strategytype">StrategyType</a></td>
+<td>Тип стратегии.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор бумаги</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата начала запрашиваемого интервала в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата конца запрашиваемого интервала  в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#signaldirection">SignalDirection</a></td>
+<td>Направление сигнала.</td>
+</tr>
+<tr>
+<td>active</td>
+<td><a href="#signalstate">SignalState</a></td>
+<td>Состояние сигнала.</td>
+</tr>
+<tr>
+<td>paging</td>
+<td><a href="#page">Page</a></td>
+<td>Настройки пагинации.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getsignalsresponse">GetSignalsResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signals</td>
+<td>Массив объектов <a href="#signal">Signal</a></td>
+<td>Массив сигналов.</td>
+</tr>
+<tr>
+<td>paging</td>
+<td><a href="#pageresponse">PageResponse</a></td>
+<td>Данные по пагинации.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="signal">Signal</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор сигнала.</td>
+</tr>
+<tr>
+<td>strategy_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор стратегии.</td>
+</tr>
+<tr>
+<td>strategy_name</td>
+<td><a href="#string">string</a></td>
+<td>Название стратегии.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор бумаги.</td>
+</tr>
+<tr>
+<td>create_dt</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время создания сигнала  в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#signaldirection">SignalDirection</a></td>
+<td>Направление сигнала</td>
+</tr>
+<tr>
+<td>initial_price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена бумаги на момент формирования сигнала</td>
+</tr>
+<tr>
+<td>info</td>
+<td><a href="#string">string</a></td>
+<td>Дополнительная информация о сигнале.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td>Название сигнала.</td>
+</tr>
+<tr>
+<td>target_price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Целевая цена.</td>
+</tr>
+<tr>
+<td>end_dt</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время дедлайна сигнала в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>probability</td>
+<td><a href="#int32">int32</a></td>
+<td>Вероятность сигнала.</td>
+</tr>
+<tr>
+<td>stoploss</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Порог закрытия сигнала по стоплосс.</td>
+</tr>
+<tr>
+<td>close_price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена закрытия сигнала.</td>
+</tr>
+<tr>
+<td>close_dt</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата и время закрытия сигнала в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+<!-- end messages -->
+
+<h3 id="enums">Enums</h3>
+<h4 id="strategytype">StrategyType</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STRATEGY_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Не определен.</td>
+</tr>
+<tr>
+<td>STRATEGY_TYPE_TECHNICAL</td>
+<td>1</td>
+<td>Техническая стратегия.</td>
+</tr>
+<tr>
+<td>STRATEGY_TYPE_FUNDAMENTAL</td>
+<td>2</td>
+<td>Фундаментальная стратегия.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="signaldirection">SignalDirection</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIGNAL_DIRECTION_UNSPECIFIED</td>
+<td>0</td>
+<td>Не определен.</td>
+</tr>
+<tr>
+<td>SIGNAL_DIRECTION_BUY</td>
+<td>1</td>
+<td>Покупка.</td>
+</tr>
+<tr>
+<td>SIGNAL_DIRECTION_SELL</td>
+<td>2</td>
+<td>Продажа.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="signalstate">SignalState</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIGNAL_STATE_UNSPECIFIED</td>
+<td>0</td>
+<td>Не определен.</td>
+</tr>
+<tr>
+<td>SIGNAL_STATE_ACTIVE</td>
+<td>1</td>
+<td>Активный сигнал.</td>
+</tr>
+<tr>
+<td>SIGNAL_STATE_CLOSED</td>
+<td>2</td>
+<td>Закрытый сигнал.</td>
+</tr>
+<tr>
+<td>SIGNAL_STATE_ALL</td>
+<td>3</td>
+<td>Все состояния.</td>
+</tr>
+</tbody>
+</table>
+<!-- range .Enums -->
+<!-- range HasServices -->
+<!-- range .Files -->
+
+<h3 id="_3">Нестандартные типы данных</h3>
+<h4 id="moneyvalue">MoneyValue</h4>
+<p>Денежная сумма в определенной валюте</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Строковый ISO-код валюты</td>
+</tr>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
+<h4 id="quotation">Quotation</h4>
+<p>Котировка - денежная сумма без указания валюты</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>units</td>
+<td><a href="#int64">int64</a></td>
+<td>Целая часть суммы, может быть отрицательным числом</td>
+</tr>
+<tr>
+<td>nano</td>
+<td><a href="#int32">int32</a></td>
+<td>Дробная часть суммы, может быть отрицательным числом</td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -1633,7 +2366,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Описание comments"
+            issue-term="Методы comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1653,7 +2386,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../signals/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методы" rel="prev">
+        <a href="../head-signals/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1662,20 +2395,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Методы
+              Описание
             </div>
           </div>
         </a>
       
       
         
-        <a href="../stoporders/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Методы" rel="next">
+        <a href="../head-stoporders/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Описание" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Методы
+              Описание
             </div>
           </div>
           <div class="md-footer__button md-icon">

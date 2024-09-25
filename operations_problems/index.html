@@ -571,6 +571,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../extended/" class="md-nav__link">
+        Дилерские торговые сессии
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../held_instruments/" class="md-nav__link">
         Инструменты иностранных эмитентов
       </a>
@@ -1254,6 +1266,57 @@
   
   
     <li class="md-nav__item">
+      <a href="../head-signals/" class="md-nav__link">
+        Описание
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signals/" class="md-nav__link">
+        Методы
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_7" type="checkbox" id="__nav_6_7" >
+      
+      <label class="md-nav__link" for="__nav_6_7">
+        Сигналы
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Сигналы" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_7">
+          <span class="md-nav__icon md-icon"></span>
+          Сигналы
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../head-stoporders/" class="md-nav__link">
         Описание
       </a>
@@ -1480,6 +1543,9 @@
 <ol>
 <li><p>ID операций могут меняться со временем.</p>
 <p>Не стоит ориентироваться на ID операций как на первичный ключ. Если вам нужно перезагрузить историю операций, удалите старые ID операции при повторном запросе операции.</p>
+</li>
+<li><p>В ряде случаев <code>trade_id</code> в операциях может отличаться от <code>trade_id</code> сервиса заявок.</p>
+<p>Для сбора информации по совершенным сделкам, включая идентификатор, рекомендуется следующий подход: первым шагом из операций получаются <code>id</code>, а затем методом <a href="/investAPI/orders/#getorderstat">GetOrderState</a> достаются идентификаторы сделок, используя <code>id</code> операции в качестве параметра <code>order_id</code>.</p>
 </li>
 <li><p>По инструментам, прошедшим корпоративные действия, история операций может быть не полной — как в API, так и в мобильном приложении. </p>
 <p>Чтобы получить точную информацию, используйте <a href="/investAPI/operations/#getbrokerreport">брокерский отчёт</a>.</p>
