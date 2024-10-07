@@ -94,12 +94,12 @@ nav:
     - Работа с индикаторами технического анализа: get_tech_indicators.md 
     - FAQ: faq_marketdata.md
   - Стоп-заявки: 
-    - Описание: head-signals.md
-    - Методы: signals.md
-  - Сигналы: 
     - Описание: head-stoporders.md
     - Методы: stoporders.md
-    - FAQ: faq_stoporders.md      
+    - FAQ: faq_stoporders.md
+  - Сигналы:
+    - Описание: head-signals.md
+    - Методы: signals.md      
 - Песочница:
   - Описание: head-sandbox.md
   - Методы: sandbox.md
