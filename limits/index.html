@@ -305,6 +305,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Ограничения по доставке данных в стримах
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1383,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../signals/" class="md-nav__link">
+      <a href="../signals.md" class="md-nav__link">
         Методы
       </a>
     </li>
@@ -1588,6 +1595,13 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Расчёт грейдов
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Ограничения по доставке данных в стримах
   </a>
   
 </li>
@@ -1814,6 +1828,41 @@
 <td align="left">5</td>
 <td align="left">4</td>
 <td align="left">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Ограничения по доставке данных в стримах</h2>
+<p>В пики активности на бирже возможны ситуации, когда за одну секунду происходят сотни событий по инструменту.
+Для ограничения нагрузки на клиентов и на сервис были введены интервалы отправки сообщений в стрим.
+За один интервал времени может быть отправлено только одно сообщение по одной подписке.
+Значения в миллисекундах приведены в таблице:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Тип подписки</th>
+<th align="left">Величина интервала</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Trades</td>
+<td align="left">без ограничений</td>
+</tr>
+<tr>
+<td align="left">Orderbook</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">Candles</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">LastPrice</td>
+<td align="left">без ограничений</td>
+</tr>
+<tr>
+<td align="left">Info</td>
+<td align="left">без ограничений</td>
 </tr>
 </tbody>
 </table>
