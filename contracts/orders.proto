@@ -20,9 +20,9 @@ service OrdersStreamService {
   rpc OrderStateStream(OrderStateStreamRequest) returns (stream OrderStateStreamResponse);
 }
 
-service OrdersService {/* Сервис предназначен для работы с торговыми поручениями:</br> **1**.
-                        выставление;</br> **2**. отмена;</br> **3**. получение статуса;</br> **4**.
-                        расчёт полной стоимости;</br> **5**. получение списка заявок.*/
+service OrdersService {/* Сервис предназначен для работы с торговыми поручениями:<br/> **1**.
+                        выставление;<br/> **2**. отмена;<br/> **3**. получение статуса;<br/> **4**.
+                        расчёт полной стоимости;<br/> **5**. получение списка заявок.*/
   //Метод выставления заявки.
   rpc PostOrder(PostOrderRequest) returns (PostOrderResponse);
 

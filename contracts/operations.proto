@@ -13,9 +13,9 @@ import "google/protobuf/timestamp.proto";
 import "common.proto";
 import "google/api/field_behavior.proto";
 
-service OperationsService {/*С помощью методов сервиса можно получить:</br></br> **1**. Список операций по счёту.</br> **2**.
-                              Портфель по счёту.</br> **3**. Позиции ценных бумаг на счёте.</br> **4**.
-                              Доступный остаток для вывода средств.</br> **5**. Различные отчёты.*/
+service OperationsService {/*С помощью методов сервиса можно получить:<br/><br/> **1**. Список операций по счёту.<br/> **2**.
+                              Портфель по счёту.<br/> **3**. Позиции ценных бумаг на счёте.<br/> **4**.
+                              Доступный остаток для вывода средств.<br/> **5**. Различные отчёты.*/
   //Получить список операций по счёту. При работе с методом учитывайте
   // [особенности взаимодействия](/investAPI/operations_problems).
   rpc GetOperations(OperationsRequest) returns (OperationsResponse);
@@ -73,7 +73,7 @@ message Operation {
   int64 quantity = 7; //Количество единиц инструмента.
   int64 quantity_rest = 8; //Неисполненный остаток по сделке.
   string figi = 9; //FIGI-идентификатор инструмента, связанного с операцией.
-  string instrument_type = 10;  //Тип инструмента. Возможные значения: </br></br>`bond` — облигация; </br>`share` — акция; </br>`currency` — валюта; </br>`etf` — фонд; </br>`futures` — фьючерс.
+  string instrument_type = 10;  //Тип инструмента. Возможные значения: <br/><br/>`bond` — облигация; <br/>`share` — акция; <br/>`currency` — валюта; <br/>`etf` — фонд; <br/>`futures` — фьючерс.
   google.protobuf.Timestamp date = 11; //Дата и время операции в формате часовом поясе UTC.
   string type = 12; //Текстовое описание типа операции.
   OperationType operation_type = 13; //Тип операции.

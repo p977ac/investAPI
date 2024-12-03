@@ -13,7 +13,7 @@ import "google/protobuf/timestamp.proto";
 import "common.proto";
 import "google/api/field_behavior.proto";
 
-service MarketDataService {//Сервис для получения биржевой информации:</br> 1. Свечи.</br> 2. Стаканы.</br> 3. Торговые статусы.</br> 4. Лента сделок.
+service MarketDataService {//Сервис для получения биржевой информации:<br/> 1. Свечи.<br/> 2. Стаканы.<br/> 3. Торговые статусы.<br/> 4. Лента сделок.
 
   //Запросить исторические свечи по инструменту.
   rpc GetCandles(GetCandlesRequest) returns (GetCandlesResponse);

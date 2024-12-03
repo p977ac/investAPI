@@ -13,8 +13,8 @@ import "google/protobuf/timestamp.proto";
 import "google/api/field_behavior.proto";
 import "common.proto";
 
-service UsersService { /*С помощью сервиса можно получить: </br> 1.
-                       список счетов пользователя; </br> 2. маржинальные показатели по счёту.*/
+service UsersService { /*С помощью сервиса можно получить: <br/> 1.
+                       список счетов пользователя; <br/> 2. маржинальные показатели по счёту.*/
 
   //Получить счета пользователя.
   rpc GetAccounts (GetAccountsRequest) returns (GetAccountsResponse);
