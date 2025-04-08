@@ -1977,10 +1977,11 @@
                 
                 <h2 id="usersservice">UsersService</h2>
 <p>С помощью сервиса можно получить: <br/> 1.
-список счетов пользователя; <br/> 2. маржинальные показатели по счёту.</p>
+список счетов пользователя; <br/> 2. маржинальные показатели по счeту.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getaccounts">GetAccounts</h4>
-<p>Получить счета пользователя.</p>
+<p>GetAccounts — счета пользователя
+Получить список счетов.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getaccountsrequest">GetAccountsRequest</a></p>
@@ -1990,7 +1991,8 @@
 </li>
 </ul>
 <h4 id="getmarginattributes">GetMarginAttributes</h4>
-<p>Рассчитать маржинальные показатели по счёту.</p>
+<p>GetMarginAttributes — маржинальные показатели по счeту
+Метод позволяет получить маржинальные показатели и ликвидность по заданному счeту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getmarginattributesrequest">GetMarginAttributesRequest</a></p>
@@ -2000,7 +2002,8 @@
 </li>
 </ul>
 <h4 id="getusertariff">GetUserTariff</h4>
-<p>Запросить тариф пользователя.</p>
+<p>GetUserTariff — тариф пользователя
+Получить информацию о текущих лимитах на подклчение, согласно текущему тарифу пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getusertariffrequest">GetUserTariffRequest</a></p>
@@ -2010,7 +2013,8 @@
 </li>
 </ul>
 <h4 id="getinfo">GetInfo</h4>
-<p>Получить информацию о пользователе.</p>
+<p>GetInfo — информация о пользователе
+Получить информацию о пользователе: тариф, признак квалификации, пройденные тесты и др.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getinforequest">GetInfoRequest</a></p>
@@ -2074,7 +2078,7 @@
 <!-- end HasFields -->
 
 <h4 id="account">Account</h4>
-<p>Информация о счёте.</p>
+<p>Информация о счeте.</p>
 <table>
 <thead>
 <tr>
@@ -2087,37 +2091,37 @@
 <tr>
 <td>id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта.</td>
+<td>Идентификатор счeта.</td>
 </tr>
 <tr>
 <td>type</td>
 <td><a href="#accounttype">AccountType</a></td>
-<td>Тип счёта.</td>
+<td>Тип счeта.</td>
 </tr>
 <tr>
 <td>name</td>
 <td><a href="#string">string</a></td>
-<td>Название счёта.</td>
+<td>Название счeта.</td>
 </tr>
 <tr>
 <td>status</td>
 <td><a href="#accountstatus">AccountStatus</a></td>
-<td>Статус счёта.</td>
+<td>Статус счeта.</td>
 </tr>
 <tr>
 <td>opened_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата открытия счёта в часовом поясе UTC.</td>
+<td>Дата открытия счeта в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>closed_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата закрытия счёта в часовом поясе UTC.</td>
+<td>Дата закрытия счeта в часовом поясе UTC.</td>
 </tr>
 <tr>
 <td>access_level</td>
 <td><a href="#accesslevel">AccessLevel</a></td>
-<td>Уровень доступа к текущему счёту (определяется токеном).</td>
+<td>Уровень доступа к текущему счeту (определяется токеном).</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2129,7 +2133,7 @@
 <!-- end HasFields -->
 
 <h4 id="getmarginattributesrequest">GetMarginAttributesRequest</h4>
-<p>Запрос маржинальных показателей по счёту.</p>
+<p>Запрос маржинальных показателей по счeту.</p>
 <table>
 <thead>
 <tr>
@@ -2142,7 +2146,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя.</td>
+<td>Идентификатор счeта пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2154,7 +2158,7 @@
 <!-- end HasFields -->
 
 <h4 id="getmarginattributesresponse">GetMarginAttributesResponse</h4>
-<p>Маржинальные показатели по счёту.</p>
+<p>Маржинальные показатели по счeту.</p>
 <table>
 <thead>
 <tr>
@@ -2167,17 +2171,17 @@
 <tr>
 <td>liquid_portfolio</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Ликвидная стоимость портфеля. <a href="https://help.tbank.ru/margin-trade/short/liquid-portfolio/">Подробнее про ликвидный портфель</a>.</td>
+<td>Ликвидная стоимость портфеля. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q4">Подробнее про ликвидный портфель</a>.</td>
 </tr>
 <tr>
 <td>starting_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная маржа — начальное обеспечение для совершения новой сделки. <a href="https://help.tbank.ru/margin-trade/short/initial-and-maintenance-margin/">Подробнее про начальную и минимальную маржу</a>.</td>
+<td>Начальная маржа — начальное обеспечение для совершения новой сделки. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q6">Подробнее про начальную и минимальную маржу</a>.</td>
 </tr>
 <tr>
 <td>minimal_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. <a href="https://help.tbank.ru/margin-trade/short/initial-and-maintenance-margin/">Подробнее про начальную и минимальную маржу</a>.</td>
+<td>Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. <a href="https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q6">Подробнее про начальную и минимальную маржу</a>.</td>
 </tr>
 <tr>
 <td>funds_sufficiency_level</td>
@@ -2192,7 +2196,7 @@
 <tr>
 <td>corrected_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Скорректированная маржа. Начальная маржа, в которой плановые позиции рассчитываются с учётом активных заявок на покупку позиций лонг или продажу позиций шорт.</td>
+<td>Скорректированная маржа. Начальная маржа, в которой плановые позиции рассчитываются с учeтом активных заявок на покупку позиций лонг или продажу позиций шорт.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2330,12 +2334,22 @@
 <tr>
 <td>qualified_for_work_with</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. <a href="https://russianinvestments.github.io/investAPI/faq_users/">Подробнее</a>.</td>
+<td>Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. <a href="/invest/services/accounts/faq_users">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>tariff</td>
 <td><a href="#string">string</a></td>
 <td>Наименование тарифа пользователя.</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор пользователя.</td>
+</tr>
+<tr>
+<td>risk_level_code</td>
+<td><a href="#string">string</a></td>
+<td>Категория риска.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2349,7 +2363,7 @@
 
 <h3 id="enums">Enums</h3>
 <h4 id="accounttype">AccountType</h4>
-<p>Тип счёта.</p>
+<p>Тип счeта.</p>
 <table>
 <thead>
 <tr>
@@ -2362,12 +2376,12 @@
 <tr>
 <td>ACCOUNT_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Тип аккаунта не определён.</td>
+<td>Тип аккаунта не определeн.</td>
 </tr>
 <tr>
 <td>ACCOUNT_TYPE_TINKOFF</td>
 <td>1</td>
-<td>Брокерский счёт Т-Инвестиций.</td>
+<td>Брокерский счeт Т-Инвестиций.</td>
 </tr>
 <tr>
 <td>ACCOUNT_TYPE_TINKOFF_IIS</td>
@@ -2387,7 +2401,7 @@
 </tbody>
 </table>
 <h4 id="accountstatus">AccountStatus</h4>
-<p>Статус счёта.</p>
+<p>Статус счeта.</p>
 <table>
 <thead>
 <tr>
@@ -2400,7 +2414,7 @@
 <tr>
 <td>ACCOUNT_STATUS_UNSPECIFIED</td>
 <td>0</td>
-<td>Статус счёта не определён.</td>
+<td>Статус счeта не определeн.</td>
 </tr>
 <tr>
 <td>ACCOUNT_STATUS_NEW</td>
@@ -2410,12 +2424,12 @@
 <tr>
 <td>ACCOUNT_STATUS_OPEN</td>
 <td>2</td>
-<td>Открытый и активный счёт.</td>
+<td>Открытый и активный счeт.</td>
 </tr>
 <tr>
 <td>ACCOUNT_STATUS_CLOSED</td>
 <td>3</td>
-<td>Закрытый счёт.</td>
+<td>Закрытый счeт.</td>
 </tr>
 <tr>
 <td>ACCOUNT_STATUS_ALL</td>
@@ -2425,7 +2439,7 @@
 </tbody>
 </table>
 <h4 id="accesslevel">AccessLevel</h4>
-<p>Уровень доступа к счёту.</p>
+<p>Уровень доступа к счeту.</p>
 <table>
 <thead>
 <tr>
@@ -2438,12 +2452,12 @@
 <tr>
 <td>ACCOUNT_ACCESS_LEVEL_UNSPECIFIED</td>
 <td>0</td>
-<td>Уровень доступа не определён.</td>
+<td>Уровень доступа не определeн.</td>
 </tr>
 <tr>
 <td>ACCOUNT_ACCESS_LEVEL_FULL_ACCESS</td>
 <td>1</td>
-<td>Полный доступ к счёту.</td>
+<td>Полный доступ к счeту.</td>
 </tr>
 <tr>
 <td>ACCOUNT_ACCESS_LEVEL_READ_ONLY</td>
