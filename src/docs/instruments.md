@@ -434,6 +434,7 @@ StructuredNotes — список структурных нот
 | ----- | ---- | ----------- |
 | basic_asset_uid |  [string](#string) | Идентификатор базового актива опциона.  Обязательный параметр. |
 | basic_asset_position_uid |  [string](#string) | Идентификатор позиции базового актива опциона. |
+| basic_instrument_id |  [string](#string) | Идентификатор базового инструмента, принимает значение принимает значения figi, instrument_uid или ticker+"_"+classCode. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -852,6 +853,7 @@ StructuredNotes — список структурных нот
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчетов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | required_tests | Массив объектов [string](#string) | Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту. |
+| asset_uid |  [string](#string) | Уникальный идентификатор актива. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |

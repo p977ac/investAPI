@@ -64,6 +64,15 @@ CurrencyTransfer — перевод денежных средств между �
 
 - Тело ответа — [CurrencyTransferResponse](#currencytransferresponse)
 
+
+#### PayIn
+PayIn — пополнение брокерского счета
+Пополнить брокерский счёт с банковского
+
+- Тело запроса — [PayInRequest](#payinrequest)
+
+- Тело ответа — [PayInResponse](#payinresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -250,6 +259,25 @@ CurrencyTransfer — перевод денежных средств между �
 
 
 #### CurrencyTransferResponse
+
+
+ <!-- end HasFields -->
+
+
+#### PayInRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| from_account_id |  [string](#string) | Номер счета списания. |
+| to_account_id |  [string](#string) | Номер брокерского счета зачисления. |
+| amount |  [MoneyValue](#moneyvalue) | Сумма перевода с указанием валюты. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### PayInResponse
 
 
  <!-- end HasFields -->

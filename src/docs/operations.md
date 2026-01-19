@@ -93,6 +93,14 @@ PositionsStream — стрим обновлений информации по и
 
 - Тело ответа — [PositionsStreamResponse](#positionsstreamresponse)
 
+
+#### OperationsStream
+OperationsStream — стрим обновлений операций
+
+- Тело запроса — [OperationsStreamRequest](#operationsstreamrequest)
+
+- Тело ответа — [OperationsStreamResponse](#operationsstreamresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -809,6 +817,70 @@ PositionsStream — стрим обновлений информации по и
 | payment |  [MoneyValue](#moneyvalue) | Сумма операции. |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+#### OperationsStreamRequest
+Запрос установки stream-соединения операций.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [string](#string) | Массив идентификаторов счетов пользователя. |
+| ping_settings |  [PingDelaySettings](#pingdelaysettings) | Запрос настройки пинга. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OperationsStreamResponse
+Информация по операциям.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| subscriptions |  [OperationsSubscriptionResult](#operationssubscriptionresult) | Объект результата подписки. |
+| operation |  [OperationData](#operationdata) | Объект стриминга операций. |
+| ping |  [Ping](#ping) | Проверка активности стрима. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OperationsSubscriptionResult
+Объект результата подписки.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [string](#string) | Массив счетов клиента. |
+| subscription_status |  [OperationsAccountSubscriptionStatus](#operationsaccountsubscriptionstatus) | Результат подписки. |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id). |
+| stream_id |  [string](#string) | Идентификатор открытого соединения |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### OperationData
+Данные об операции.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| broker_account_id |  [string](#string) | Идентификатор счета. |
+| id |  [string](#string) | Номер поручения. |
+| parent_operation_id |  [string](#string) | Номер родительского поручения. |
+| name |  [string](#string) | Название инструмента. |
+| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата. |
+| type |  [OperationType](#operationtype) | Тип операции. |
+| state |  [OperationState](#operationstate) | Статус поручения. |
+| instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
+| instrument_type |  [string](#string) | Тип инструмента. |
+| instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
+| position_uid |  [string](#string) | Идентификатор позиции. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
+| payment |  [MoneyValue](#moneyvalue) | Сумма операции. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -895,6 +967,10 @@ PositionsStream — стрим обновлений информации по и
 | OPERATION_TYPE_OVER_INCOME | 63 | Доход от оверанайта. |
 | OPERATION_TYPE_OPTION_EXPIRATION | 64 | Экспирация опциона. |
 | OPERATION_TYPE_FUTURE_EXPIRATION | 65 | Экспирация фьючерса. |
+| OPERATION_TYPE_OTHER_FEE | 66 | Прочие комиссии; |
+| OPERATION_TYPE_OTHER | 67 | Операция по счету; |
+| OPERATION_TYPE_DFA_REDEMPTION | 68 | погашение ЦФА-токена; |
+| OPERATION_TYPE_PRIMARY_ORDER | 69 | отмена заявки на первичное размещение по ЦФА; |
 
 
 
@@ -921,6 +997,19 @@ PositionsStream — стрим обновлений информации по и
 | POSITIONS_SUBSCRIPTION_STATUS_SUCCESS | 1 | Успешно. |
 | POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND | 2 | Счет не найден или недостаточно прав. |
 | POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR | 3 | Произошла ошибка. |
+
+
+
+
+#### OperationsAccountSubscriptionStatus
+Результат подписки.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPERATIONS_SUBSCRIPTION_STATUS_UNSPECIFIED | 0 | Тип не определен. |
+| OPERATIONS_SUBSCRIPTION_STATUS_SUCCESS | 1 | Успешно. |
+| OPERATIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND | 2 | Счет не найден или недостаточно прав. |
+| OPERATIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR | 3 | Произошла ошибка. |
 
 
 

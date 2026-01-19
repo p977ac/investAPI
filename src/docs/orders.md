@@ -555,6 +555,7 @@ GetOrderPrice — получить предварительную стоимос
 | time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | account_id |  [string](#string) | Номер счета. |
+| trade_order_id |  [string](#string) | Идентификатор торгового поручения. |
 | initial_order_price |  [MoneyValue](#moneyvalue) | Начальная цена заявки. |
 | order_price |  [MoneyValue](#moneyvalue) | Цена выставления заявки. |
 | amount |  [MoneyValue](#moneyvalue) | Предрассчитанная стоимость полной заявки. |
