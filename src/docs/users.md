@@ -73,6 +73,15 @@ PayIn — пополнение брокерского счета
 
 - Тело ответа — [PayInResponse](#payinresponse)
 
+
+#### GetAccountValues
+GetAccountValues — дополнительные показатели счетов
+Метод предназначен для получения дополнительных показателей счетов
+
+- Тело запроса — [GetAccountValuesRequest](#getaccountvaluesrequest)
+
+- Тело ответа — [GetAccountValuesResponse](#getaccountvaluesresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -142,6 +151,7 @@ PayIn — пополнение брокерского счета
 | funds_sufficiency_level |  [Quotation](#quotation) | Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже. |
 | amount_of_missing_funds |  [MoneyValue](#moneyvalue) | Объем недостающих средств. Разница между стартовой маржой и ликвидной стоимости портфеля. |
 | corrected_margin |  [MoneyValue](#moneyvalue) | Скорректированная маржа. Начальная маржа, в которой плановые позиции рассчитываются с учeтом активных заявок на покупку позиций лонг или продажу позиций шорт. |
+| guarantee_for_futures |  [MoneyValue](#moneyvalue) | Размер гарантийного обеспечения, заблокированного под фьючерсы. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -281,6 +291,53 @@ PayIn — пополнение брокерского счета
 
 
  <!-- end HasFields -->
+
+
+#### GetAccountValuesRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [string](#string) | Массив счетов пользователя. |
+| values | Массив объектов [AccountValue](#accountvalue) | Массив запрашиваемых параметров. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetAccountValuesResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [AccountValuesWithParameters](#accountvalueswithparameters) | Массив счетов с параметрами. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### AccountValuesWithParameters
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Номер счета. |
+| values | Массив объектов [InstrumentParameter](#instrumentparameter) | Массив параметров инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### InstrumentParameter
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| name |  [AccountValue](#accountvalue) | Тип запрашиваемого параметра. |
+| value |  [MoneyValue](#moneyvalue) | Значение запрашиваемого параметра. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -298,6 +355,7 @@ PayIn — пополнение брокерского счета
 | ACCOUNT_TYPE_INVEST_FUND | 4 | Фонд денежного рынка. |
 | ACCOUNT_TYPE_DEBIT | 5 | Дебетовый карточный счeт. |
 | ACCOUNT_TYPE_SAVING | 6 | Накопительный счeт. |
+| ACCOUNT_TYPE_DFA | 7 | Смарт-счет. |
 
 
 
@@ -325,6 +383,18 @@ PayIn — пополнение брокерского счета
 | ACCOUNT_ACCESS_LEVEL_FULL_ACCESS | 1 | Полный доступ к счeту. |
 | ACCOUNT_ACCESS_LEVEL_READ_ONLY | 2 | Доступ с уровнем прав «только чтение». |
 | ACCOUNT_ACCESS_LEVEL_NO_ACCESS | 3 | Доступа нет. |
+
+
+
+
+#### AccountValue
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ACCOUNT_VALUE_UNSPECIFIED | 0 | Не определён. |
+| ACCOUNT_VALUE_MARGIN_FEE | 1 | Размер комиссии за маржинальное кредитование. |
+| ACCOUNT_VALUE_AMOUNT_WITHOUT_EXTRA_FEE | 2 | Остаток доступного лимита с текущей комиссией. |
 
 
  <!-- range .Enums -->

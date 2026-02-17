@@ -439,6 +439,7 @@ OperationsStream — стрим обновлений операций
 | itemsCount |  [int32](#int32) | Количество записей в отчете. |
 | pagesCount |  [int32](#int32) | Количество страниц с данными отчета, начинается с 0. |
 | page |  [int32](#int32) | Текущая страница, начинается с 0. |
+| task_id |  [string](#string) | Идентификатор задачи формирования брокерского отчета. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -633,7 +634,7 @@ OperationsStream — стрим обновлений операций
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Идентификатор счета клиента, обязательный параметр. Остальные параметры опциональны. |
-| instrument_id |  [string](#string) | Идентификатор инструмента — FIGI или UID инструмента. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода по UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода по UTC. |
 | cursor |  [string](#string) | Идентификатор элемента, с которого начать формировать ответ. |

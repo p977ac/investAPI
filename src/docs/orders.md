@@ -177,7 +177,7 @@ GetOrderPrice — получить предварительную стоимос
 | account_id |  [string](#string) | Номер счета. |
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов. |
-| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения, применяется только к лимитной заявке. |
 | price_type |  [PriceType](#pricetype) | Тип цены. |
 | confirm_margin_trade |  [bool](#bool) | Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false. |
@@ -222,7 +222,7 @@ GetOrderPrice — получить предварительную стоимос
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | quantity |  [int64](#int64) | Количество лотов. |
 | price |  [Quotation](#quotation) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений. |
 | direction |  [OrderDirection](#orderdirection) | Направление операции. |
@@ -377,6 +377,7 @@ GetOrderPrice — получить предварительную стоимос
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Номер счета. |
+| order_id_type |  [OrderIdType](#orderidtype) | Тип идентификатора заявки. |
 | order_id |  [string](#string) | Идентификатор заявки на бирже. |
 | idempotency_key |  [string](#string) | Новый идентификатор запроса выставления поручения для целей идемпотентности. Максимальная длина 36 символов. Перезатирает старый ключ. |
 | quantity |  [int64](#int64) | Количество лотов. |
@@ -394,7 +395,7 @@ GetOrderPrice — получить предварительную стоимос
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Номер счета |
-| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | price |  [Quotation](#quotation) | Цена инструмента |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -446,7 +447,7 @@ GetOrderPrice — получить предварительную стоимос
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Номер счета |
-| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | price |  [Quotation](#quotation) | Цена инструмента |
 | direction |  [OrderDirection](#orderdirection) | Направление заявки |
 | quantity |  [int64](#int64) | Количество лотов |

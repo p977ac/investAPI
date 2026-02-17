@@ -140,6 +140,22 @@ Shares — список акций
 - Тело ответа — [SharesResponse](#sharesresponse)
 
 
+#### DfaBy
+
+
+- Тело запроса — [InstrumentRequest](#instrumentrequest)
+
+- Тело ответа — [DfaResponse](#dfaresponse)
+
+
+#### Dfas
+
+
+- Тело запроса — [DfasRequest](#dfasrequest)
+
+- Тело ответа — [DfasResponse](#dfasresponse)
+
+
 #### Indicatives
 Indicatives — индикативные инструменты — индексы, товары и другие
 
@@ -407,7 +423,7 @@ StructuredNotes — список структурных нот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения — `figi`, `ticker`. [Подробнее об идентификации инструментов](./faq_identification/). |
+| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения — `figi`, `ticker`. [Подробнее об идентификации инструментов](/invest/intro/intro/faq_identification). |
 | class_code |  [string](#string) | Идентификатор `class_code`. Обязательный, если `id_type = ticker`. |
 | id |  [string](#string) | Идентификатор запрашиваемого инструмента. |
  <!-- end Fields -->
@@ -2259,6 +2275,82 @@ StructuredNotes — список структурных нот
 | disclosure_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата раскрытия сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+#### DfasRequest
+
+
+ <!-- end HasFields -->
+
+
+#### DfaResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| name |  [string](#string) | Название инструмента. |
+| position_uid |  [string](#string) | Уникальный идентификатор позиции. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
+| lot |  [int32](#int32) | Количество лотов. |
+| nominal |  [MoneyValue](#moneyvalue) | Номинал. |
+| currency |  [string](#string) | Валюта. |
+| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения ЦФА в формате UTC. |
+| short_enabled_flag |  [bool](#bool) | Признак доступности для операций шорт. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов по бумаге через API. |
+| buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
+| sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| limit_order_available_flag |  [bool](#bool) | Признак доступности выставления лимитной заявки по инструменту. |
+| market_order_available_flag |  [bool](#bool) | Признак доступности выставления рыночной заявки по инструменту. |
+| bestprice_order_available_flag |  [bool](#bool) | Признак доступности выставления bestprice заявки по инструменту. |
+| for_iis_flag |  [bool](#bool) | Возможность покупки/продажи на ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| type |  [string](#string) | Тип актива. Возможные значения: credit_portfolio_dfa, debt_dfa. |
+| basic_assets | Массив объектов [DfaResponse.BasicAsset](#dfaresponsebasicasset) | Базовые активы, входящие в ЦФА. |
+| forecast_yield |  [DfaResponse.ForecastYield](#dfaresponseforecastyield) | Прогнозная доходность смарт-портфелей, в виде интервала в %. |
+| yield_to_maturity |  [Quotation](#quotation) | Доходность к погашению в %. |
+| coupon_value |  [Quotation](#quotation) | Величина купона. |
+| coupon_payment_frequency |  [int32](#int32) | Количество выплат в год. |
+| coupon_payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выплаты купона. |
+| aci_value |  [Quotation](#quotation) | Значение НКД (накопленного купонного дохода) на дату. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### DfaResponse.BasicAsset
+Базовый актив.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | UID базового актива |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### DfaResponse.ForecastYield
+Прогнозная доходность смарт-портфелей.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| min_value |  [Quotation](#quotation) | Минимальное значение прогнозной доходности в % |
+| max_value |  [Quotation](#quotation) | Максимальное значение прогнозной доходности в % |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### DfasResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instruments | Массив объектов [DfaResponse](#dfaresponse) | Массив инструментов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -2330,7 +2422,7 @@ StructuredNotes — список структурных нот
 
 
 #### InstrumentIdType
-Тип идентификатора инструмента. [Подробнее об идентификации инструментов](./faq_identification/).
+Тип идентификатора инструмента. [Подробнее об идентификации инструментов](/invest/intro/intro/faq_identification).
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -2339,6 +2431,7 @@ StructuredNotes — список структурных нот
 | INSTRUMENT_ID_TYPE_TICKER | 2 | Ticker. |
 | INSTRUMENT_ID_TYPE_UID | 3 | Уникальный идентификатор. |
 | INSTRUMENT_ID_TYPE_POSITION_UID | 4 | Идентификатор позиции. |
+| INSTRUMENT_ID_TYPE_ID | 5 | Универсальный тип идентификатора инструмента. |
 
 
 

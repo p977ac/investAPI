@@ -37,6 +37,7 @@
 30032|INVALID_ARGUMENT|`depth` is invalid|Входной параметр `depth` имеет некорректное значение.<br/>Укажите корректный параметр `depth`.|
 30033|INVALID_ARGUMENT|Missing parameter: `trade_clearing_account` or `class_code`|Параметр `trade_clearing_account` или `class_code` не может быть пустым.|
 30034|INVALID_ARGUMENT|Not enough balance|Недостаточно средств для совершения сделки (ошибка песочницы).<br/>Пополните баланс нужной валюты через метод [SandboxPayIn](./sandbox#sandboxpayin).|
+30035|INVALID_ARGUMENT|`stop_price` is invalid|Входной параметр `stop_price` имеет некорректное значение. Укажите корректный параметр `stop_price`.|
 30036|INVALID_ARGUMENT|Missing parameter: `stop_price`|Входной параметр `stop_price` является обязательным.<br/>Укажите корректный параметр `stop_price`.|
 30037|INVALID_ARGUMENT|Missing parameter: `stop_order_type`|Входной параметр `stop_order_type` является обязательным.<br/>Укажите корректный параметр `stop_order_typ`.|
 30038|INVALID_ARGUMENT|`stop_order_type` is invalid|Входной параметр `stop_order_type` имеет некорректное значение.<br/>[Список доступных значений](./stoporders/#stopordertype).|
@@ -138,10 +139,24 @@
 30242|INVALID_ARGUMENT|specify correct `limit`|Значение `limit` должно быть от 1 до 100|
 30244|INVALID_ARGUMENT|The maximum request period exceeded|Превышен максимальный интервал для запроса.|
 30245|INVALID_ARGUMENT|`execution_status` is invalid|Входной параметр `execution_status` имеет некорректное значение.|
+30246|INVALID_ARGUMENT|Invalid parameter: `amount`|Входной параметр `amount` имеет некорректное значение. Значение должно быть неотрицательным и кратным 0.01.|
+30247|INVALID_ARGUMENT|Missing parameter: `amount`|Входной параметр `amount` является обязательным.|
+30248|INVALID_ARGUMENT|Missing parameter: `to_account_id`|Входной параметр `to_account_id` является обязательным.|
+30249|INVALID_ARGUMENT|Missing parameter: `from_account_id`|Входной параметр `from_account_id` является обязательным.|
+30250|INVALID_ARGUMENT|Invalid parameter: `to_account_id`|Зачисление денежных средств возможно только на действующие брокерские счета.|
+30251|INVALID_ARGUMENT|Transaction error: %s|Ошибка выполнения транзакции.<br/>Смотрите подробнее в тексте ошибки.|
+30252|INVALID_ARGUMENT|Invalid parameter: `from_account_id`|Списание денежных средств возможно только с действующих брокерских счетов. Недоступно для ИИС.|
+30253|INVALID_ARGUMENT|Invalid parameter: 'currency'|Входной параметр 'currency' имеет не корректное значение. Укажите допустимое значение.|
+30254|INVALID_ARGUMENT|Invalid parameter: `time_in_force`|Входной параметр `time_in_force` имеет некорректное значение.|
+30255|INVALID_ARGUMENT|Account forbidden for trading|Торговля по этому счету запрещена.|
+30256|INVALID_ARGUMENT|Missing parameter: `transaction_id`|Входной параметр `transaction_id` является обязательным.|
+30257|INVALID_ARGUMENT|Invalid parameter: `transaction_id`|Входной параметр `transaction_id` имеет некорректное значение. Укажите корректное значение параметра 'transaction_id' в формате uuid.|
+30258|INVALID_ARGUMENT|Specified currency not available for the operation|Переданная валюта недоступна для данной операции.|
 35001|INVALID_ARGUMENT|Sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счет необходимо закрыть один из существующих.|
 40002|PERMISSION_DENIED|Insufficient privileges|Недостаточно прав для совершения операции.<br/>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.<br/>[Подробнее про виды токенов](./index#_2).|
 40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или не активен.<br/>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/).|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.<br/>Брокерский счет не найден, не принадлежит пользователю или закрыт. Возможно, на пользователе ограничения от T-Invest API или от биржи — в этом случае обратитесь в техподдержку.|
+40005|PERMISSION_DENIED|Insufficient privileges|Для работы с методом требуется токен с правами на перевод средств между счетами|
 50001|NOT_FOUND|Exchange not found|Биржа не найдена по переданному `exchange_id`.<br/>Укажите корректный `exchange_id`.|
 50002|NOT_FOUND|Instrument not found|Инструмент не найден.<br/>Укажите корректный идентификатор инструмента.|
 50004|NOT_FOUND|Account not found|Счёт по переданному `account_id` не найден.<br/>Укажите корректный `account_id`.|
@@ -162,6 +177,7 @@
 80003|RESOURCE_EXHAUSTED|The limit on SMS sending has been exceeded, try again in a minute|Превышен лимит на отправку СМС, попробуйте через минуту. Если вы не хотите получать СМС при выставлении заявки, отключите отправку СМС в личном кабинете.|
 80004|RESOURCE_EXHAUSTED|No active subscriptions|В стриме отсутствуют активные подписки.|
 80005|RESOURCE_EXHAUSTED|Stream lifetime too long|Стрим был завершен из-за превышения времени жизни. Подключитесь повторно.|
+80006|RESOURCE_EXHAUSTED|Error limit exceeded|Превышен лимит ошибок в минуту. Проверьте параметры запроса, а также его реализуемость.|
 90001|FAILED_PRECONDITION|Need confirmation: %s|Требуется подтверждение операции.<br/>Смотрите подробнее в тексте ошибки.|
 90002|FAILED_PRECONDITION|Only for qualified investors|Торговля этим инструментом доступна только квалифицированным инвесторам.|
 90003|FAILED_PRECONDITION|The price is too high|Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. [Подробнее про ограничения на стоимость заявки](./faq_orders/).|

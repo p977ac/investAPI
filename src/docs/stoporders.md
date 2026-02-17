@@ -55,7 +55,7 @@ CancelStopOrder — отменить стоп-заявку
 | expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки. |
 | stop_order_type |  [StopOrderType](#stopordertype) | Тип заявки. |
 | expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время окончания действия стоп-заявки по UTC. Для `ExpirationType = GoodTillDate` заполнение обязательно, для `GoodTillCancel` игнорируется. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | exchange_order_type |  [ExchangeOrderType](#exchangeordertype) | Тип дочерней биржевой заявки. |
 | take_profit_type |  [TakeProfitType](#takeprofittype) | Подтип стоп-заявки — `TakeProfit`. |
 | trailing_data |  [PostStopOrderRequest.TrailingData](#poststoporderrequesttrailingdata) | Массив с параметрами трейлинг-стопа. |
