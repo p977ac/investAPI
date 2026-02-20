@@ -123,6 +123,7 @@ message PortfolioResponse {
   repeated VirtualPortfolioPosition virtual_positions = 12; //Массив виртуальных позиций портфеля.
   MoneyValue daily_yield = 15;  // Рассчитанная доходность портфеля за день в рублях.
   Quotation daily_yield_relative = 16; //Относительная доходность в день в %.
+  MoneyValue total_amount_dfa = 17; //Общая стоимость смарт-активов в портфеле в рублях.
 }
 
 //Запрос позиций портфеля по счету.

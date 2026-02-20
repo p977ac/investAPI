@@ -208,6 +208,7 @@ OperationsStream — стрим обновлений операций
 | virtual_positions | Массив объектов [VirtualPortfolioPosition](#virtualportfolioposition) | Массив виртуальных позиций портфеля. |
 | daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день в рублях. |
 | daily_yield_relative |  [Quotation](#quotation) | Относительная доходность в день в %. |
+| total_amount_dfa |  [MoneyValue](#moneyvalue) | Общая стоимость смарт-активов в портфеле в рублях. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

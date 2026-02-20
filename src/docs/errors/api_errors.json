@@ -749,6 +749,11 @@
     "type": "INVALID_ARGUMENT",
     "description": "Переданная валюта недоступна для данной операции."
   },
+  "30260": {
+    "message": "`instant_execution` not available for specified `stop_order_type`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Моментальное исполнение не поддерживается этим типом стоп-заявки."
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",

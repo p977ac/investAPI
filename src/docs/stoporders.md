@@ -62,6 +62,7 @@ CancelStopOrder — отменить стоп-заявку
 | price_type |  [PriceType](#pricetype) | Тип цены. |
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате `UID`. Максимальная длина — 36 символов. |
 | confirm_margin_trade |  [bool](#bool) | Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false. |
+| instant_execution |  [bool](#bool) | Признак необходимости моментальной активации, используется только для трейлинг-стопа. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -166,6 +167,7 @@ CancelStopOrder — отменить стоп-заявку
 | exchange_order_id |  [string](#string) | Идентификатор биржевой заявки. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
+| instant_execution |  [bool](#bool) | Признак необходимости моментальной активации, используется только для трейлинг-стопа. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

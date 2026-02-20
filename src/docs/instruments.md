@@ -141,7 +141,7 @@ Shares — список акций
 
 
 #### DfaBy
-
+DfaBy — получить цифровой актив по ее идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -149,7 +149,7 @@ Shares — список акций
 
 
 #### Dfas
-
+Dfas — список цифровых активов
 
 - Тело запроса — [DfasRequest](#dfasrequest)
 
@@ -486,7 +486,7 @@ StructuredNotes — список структурных нот
 | figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. Фильтрация по `coupon_date` — дата выплаты купона. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. Фильтрация по `coupon_date` — дата выплаты купона. |
-| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -533,7 +533,7 @@ StructuredNotes — список структурных нот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | event_number |  [int32](#int32) | Номер события для данного типа события. |
 | event_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата события. |
 | event_type |  [GetBondEventsRequest.EventType](#getbondeventsrequesteventtype) | Тип события. |
@@ -1148,7 +1148,7 @@ StructuredNotes — список структурных нот
 | figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
-| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1185,7 +1185,7 @@ StructuredNotes — список структурных нот
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Идентификатор инструмента. |
-| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1273,7 +1273,7 @@ StructuredNotes — список структурных нот
 | figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. Фильтрация происходит по параметру `record_date` — дата фиксации реестра. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. Фильтрация происходит по параметру `record_date` — дата фиксации реестра. |
-| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -2012,7 +2012,7 @@ StructuredNotes — список структурных нот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента в формате UID. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
  <!-- end Fields -->
@@ -2097,7 +2097,7 @@ StructuredNotes — список структурных нот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -2161,7 +2161,7 @@ StructuredNotes — список структурных нот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id | Массив объектов [string](#string) | Идентификаторы инструментов. |
+| instrument_id | Массив объектов [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -2235,9 +2235,9 @@ StructuredNotes — список структурных нот
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) |  |
-| limit |  [int32](#int32) |  |
-| next_cursor |  [string](#string) |  |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
+| limit |  [int32](#int32) | Количество выводимых записей в ответе, не больше 100. |
+| next_cursor |  [string](#string) | Курсор. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -2278,13 +2278,13 @@ StructuredNotes — список структурных нот
 
 
 #### DfasRequest
-
+Запрос цифровых активов
 
  <!-- end HasFields -->
 
 
 #### DfaResponse
-
+Цифровой актив
 
 
 | Field | Type | Description |
@@ -2343,7 +2343,7 @@ StructuredNotes — список структурных нот
 
 
 #### DfasResponse
-
+Цифровые активы
 
 
 | Field | Type | Description |

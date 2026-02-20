@@ -43,6 +43,7 @@ message PostStopOrderRequest {
   PriceType price_type = 14; //Тип цены.
   string order_id = 15 [(google.api.field_behavior) = REQUIRED]; //Идентификатор запроса выставления поручения для целей идемпотентности в формате `UID`. Максимальная длина — 36 символов.
   bool confirm_margin_trade = 16; //Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false.
+  optional bool instant_execution = 17; //Признак необходимости моментальной активации, используется только для трейлинг-стопа.
   message TrailingData {
       Quotation indent = 1; //Отступ.
       TrailingValueType indent_type = 2; //Тип величины отступа.
@@ -103,6 +104,7 @@ message StopOrder {
   optional string exchange_order_id = 17; //Идентификатор биржевой заявки.
   string ticker = 18; //Тикер инструмента.
   string class_code = 19; //Класс-код (секция торгов).
+  bool instant_execution = 20; //Признак необходимости моментальной активации, используется только для трейлинг-стопа.
   message TrailingData {
     Quotation indent = 1; //Отступ.
     TrailingValueType indent_type = 2; //Тип величины отступа.
