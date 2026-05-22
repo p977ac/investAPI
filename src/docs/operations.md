@@ -13,7 +13,7 @@
 
 
 #### GetOperations
-GetOperations — список операций по счету
+Deprecated GetOperations — список операций по счету
 При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
@@ -290,6 +290,7 @@ OperationsStream — стрим обновлений операций
 | daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
+| var_margin_settled |  [MoneyValue](#moneyvalue) | Вариационная маржа (расчетная). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -973,6 +974,7 @@ OperationsStream — стрим обновлений операций
 | OPERATION_TYPE_OTHER | 67 | Операция по счету; |
 | OPERATION_TYPE_DFA_REDEMPTION | 68 | погашение ЦФА-токена; |
 | OPERATION_TYPE_PRIMARY_ORDER | 69 | отмена заявки на первичное размещение по ЦФА; |
+| OPERATION_TYPE_FUNDING | 70 | Списание фандинга. |
 
 
 

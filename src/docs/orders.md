@@ -533,6 +533,7 @@ GetOrderPrice — получить предварительную стоимос
 | order_state |  [OrderStateStreamResponse.OrderState](#orderstatestreamresponseorderstate) | Информация об исполнении торгового поручения. |
 | ping |  [Ping](#ping) | Проверка активности стрима. |
 | subscription |  [SubscriptionResponse](#subscriptionresponse) | Ответ на запрос на подписку. |
+| stop_order_state |  [OrderStateStreamResponse.StopOrderState](#orderstatestreamresponsestoporderstate) | Стоп-ордер. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -571,6 +572,27 @@ GetOrderPrice — получить предварительную стоимос
 | completion_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время исполнения заявки. |
 | exchange |  [string](#string) | Код биржи. |
 | instrument_uid |  [string](#string) | UID идентификатор инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### OrderStateStreamResponse.StopOrderState
+Стоп-ордер
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| stop_order_id |  [string](#string) | Идентификатор стоп-заявки. |
+| account_id |  [string](#string) | Номер счёта. |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата создания заявки. |
+| direction |  [OrderDirection](#orderdirection) | Направление заявки. |
+| price |  [MoneyValue](#moneyvalue) | Цена заявки. |
+| stop_price |  [MoneyValue](#moneyvalue) | Цена активации стоп-заявки. |
+| order_type |  [OrderType](#ordertype) | Тип дочерней биржевой заявки. |
+| instrument_uid |  [string](#string) | UID идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код. |
+| status |  [StopOrderStatusOption](#stoporderstatusoption) | Состояние заявки. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

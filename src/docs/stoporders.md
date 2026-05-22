@@ -19,7 +19,7 @@ PostStopOrder — выставить стоп-заявку
 
 
 #### GetStopOrders
-GetStopOrders — получить список активных стоп-заявок по счету
+GetStopOrders — получить список стоп-заявок по счету
 
 - Тело запроса — [GetStopOrdersRequest](#getstopordersrequest)
 
@@ -95,7 +95,7 @@ CancelStopOrder — отменить стоп-заявку
 
 
 #### GetStopOrdersRequest
-Запрос получения списка активных стоп-заявок.
+Запрос получения списка стоп-заявок.
 
 
 | Field | Type | Description |
@@ -109,7 +109,7 @@ CancelStopOrder — отменить стоп-заявку
 
 
 #### GetStopOrdersResponse
-Список активных стоп-заявок.
+Список стоп-заявок.
 
 
 | Field | Type | Description |

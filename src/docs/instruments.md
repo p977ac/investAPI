@@ -141,7 +141,7 @@ Shares — список акций
 
 
 #### DfaBy
-DfaBy — получить цифровой актив по ее идентификатору
+DfaBy — получить цифровой актив по его идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -348,6 +348,14 @@ StructuredNotes — список структурных нот
 
 - Тело ответа — [StructuredNotesResponse](#structurednotesresponse)
 
+
+#### News
+News — получение актуальных новостей
+
+- Тело запроса — [NewsRequest](#newsrequest)
+
+- Тело ответа — [NewsResponse](#newsresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -451,6 +459,18 @@ StructuredNotes — список структурных нот
 | basic_asset_uid |  [string](#string) | Идентификатор базового актива опциона.  Обязательный параметр. |
 | basic_asset_position_uid |  [string](#string) | Идентификатор позиции базового актива опциона. |
 | basic_instrument_id |  [string](#string) | Идентификатор базового инструмента, принимает значение принимает значения figi, instrument_uid или ticker+"_"+classCode. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### NewsRequest
+Запрос получения актуальных новостей
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| cursor |  [int64](#int64) | Идентификатор элемента, с которого начать формировать ответ. |
+| limit |  [int32](#int32) | Лимит количества новостей в ответе. По умолчанию 1000. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -767,6 +787,73 @@ StructuredNotes — список структурных нот
  <!-- end HasFields -->
 
 
+#### NewsResponse
+Данные по актуальным новостям.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| has_next |  [bool](#bool) | Признак, есть ли еще новости. |
+| next_cursor |  [int64](#int64) | Следующий курсор. |
+| items | Массив объектов [NewsItem](#newsitem) | Массив новостей. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### NewsItem
+Объект новости.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| id |  [int64](#int64) | Уникальный идентификатор новости. |
+| source |  [string](#string) | Источник новости. |
+| title |  [string](#string) | Заголовок новости. |
+| content |  [string](#string) | Содержание новости. |
+| summary |  [string](#string) | Обобщенная информация. |
+| tables | Массив объектов [Table](#table) | Табличные данные. |
+| instrument_id | Массив объектов [NewsInstrument](#newsinstrument) | Инструменты из новости. |
+| priority |  [bool](#bool) | Флаг, указывающий, важная ли новость. |
+| ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время новости. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### Table
+Объект табличных данных.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| table |  [string](#string) | Таблица. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### NewsInstrument
+Объект инструмента из новости.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument |  [NewsInstrumentInfo](#newsinstrumentinfo) | Информация по инструменту. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### NewsInstrumentInfo
+Объект информации по инструменту из новости.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### Bond
 Объект передачи информации об облигации.
 
@@ -827,7 +914,7 @@ StructuredNotes — список структурных нот
 | risk_level |  [RiskLevel](#risklevel) | Уровень риска. |
 | brand |  [BrandData](#branddata) | Информация о бренде. |
 | bond_type |  [BondType](#bondtype) | Тип облигации. |
-| call_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации. |
+| call_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата оферты. |
 | dlong_client |  [Quotation](#quotation) | Ставка риска в лонг с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5). |
 | dshort_client |  [Quotation](#quotation) | Ставка риска в шорт с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5). |
  <!-- end Fields -->
@@ -1815,6 +1902,19 @@ StructuredNotes — список структурных нот
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| index_composition | Массив объектов [IndexInstrument](#indexinstrument) | Состав индекса. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### IndexInstrument
+Инструмент в составе индекса
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Идентификатор инструмента. |
+| weight |  [Quotation](#quotation) | Вес инструмента в составе индекса в %. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
