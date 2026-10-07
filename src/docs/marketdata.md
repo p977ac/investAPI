@@ -573,6 +573,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | candles | Массив объектов [HistoricCandle](#historiccandle) | Массив свечей. |
+| price_currency |  [string](#string) | Валюта цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -687,6 +688,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | last_price_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения цены последней сделки. |
 | close_price_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения цены закрытия. |
 | orderbook_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время формирования стакана на бирже. |
+| price_currency |  [string](#string) | Валюта цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -767,6 +769,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | trades | Массив объектов [Trade](#trade) | Массив сделок. |
+| price_currency |  [string](#string) | Валюта цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -844,6 +847,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | length |  [int32](#int32) | Торговый период, за который рассчитывается индикатор. |
 | deviation |  [GetTechAnalysisRequest.Deviation](#gettechanalysisrequestdeviation) | Параметры отклонения. |
 | smoothing |  [GetTechAnalysisRequest.Smoothing](#gettechanalysisrequestsmoothing) | Параметры сглаживания. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -932,6 +936,21 @@ subscribeCandles | Изменения статуса подписки на св�
 | values | Массив объектов [MarketValue](#marketvalue) | Массив параметров инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
+| statistic |  [MarketValueStatistic](#marketvaluestatistic) | Дополнительная информация. |
+| price_currency |  [string](#string) | Валюта цены. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### MarketValueStatistic
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| interested_count |  [int32](#int32) | Количество человек, просматривающих инструмент. |
+| traded_count |  [int32](#int32) | Количество человек, торгующих инструментом. |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время актуализации данных. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

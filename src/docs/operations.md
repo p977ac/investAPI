@@ -209,6 +209,8 @@ OperationsStream — стрим обновлений операций
 | daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день в рублях. |
 | daily_yield_relative |  [Quotation](#quotation) | Относительная доходность в день в %. |
 | total_amount_dfa |  [MoneyValue](#moneyvalue) | Общая стоимость смарт-активов в портфеле в рублях. |
+| total_var_margin |  [MoneyValue](#moneyvalue) | Общая вариационная маржа. |
+| total_var_margin_settled |  [MoneyValue](#moneyvalue) | Общая вариационная маржа от расчетной цены или от цены закрытия позиции. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

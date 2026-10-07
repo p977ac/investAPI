@@ -152,6 +152,8 @@
 30256|INVALID_ARGUMENT|Missing parameter: `transaction_id`|Входной параметр `transaction_id` является обязательным.|
 30257|INVALID_ARGUMENT|Invalid parameter: `transaction_id`|Входной параметр `transaction_id` имеет некорректное значение. Укажите корректное значение параметра 'transaction_id' в формате uuid.|
 30258|INVALID_ARGUMENT|Specified currency not available for the operation|Переданная валюта недоступна для данной операции.|
+30260|INVALID_ARGUMENT|`instant_execution` not available for specified `stop_order_type`|Моментальное исполнение не поддерживается этим типом стоп-заявки.|
+30261|INVALID_ARGUMENT|stop-orders response limit exceeded|Превышен лимит на количество стоп-заявок в ответе. Ограничьте запрос параметрами `from` и `to`.|
 35001|INVALID_ARGUMENT|Sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счет необходимо закрыть один из существующих.|
 40002|PERMISSION_DENIED|Insufficient privileges|Недостаточно прав для совершения операции.<br/>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.<br/>[Подробнее про виды токенов](./index#_2).|
 40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или не активен.<br/>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/).|
@@ -178,6 +180,7 @@
 80004|RESOURCE_EXHAUSTED|No active subscriptions|В стриме отсутствуют активные подписки.|
 80005|RESOURCE_EXHAUSTED|Stream lifetime too long|Стрим был завершен из-за превышения времени жизни. Подключитесь повторно.|
 80006|RESOURCE_EXHAUSTED|Error limit exceeded|Превышен лимит ошибок в минуту. Проверьте параметры запроса, а также его реализуемость.|
+80007|RESOURCE_EXHAUSTED|Stop-orders limit has been reached for instrument|Достигнуто максимальное количество стоп-ордеров по инструменту|
 90001|FAILED_PRECONDITION|Need confirmation: %s|Требуется подтверждение операции.<br/>Смотрите подробнее в тексте ошибки.|
 90002|FAILED_PRECONDITION|Only for qualified investors|Торговля этим инструментом доступна только квалифицированным инвесторам.|
 90003|FAILED_PRECONDITION|The price is too high|Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. [Подробнее про ограничения на стоимость заявки](./faq_orders/).|

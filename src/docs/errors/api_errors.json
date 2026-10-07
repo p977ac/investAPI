@@ -754,6 +754,11 @@
     "type": "INVALID_ARGUMENT",
     "description": "Моментальное исполнение не поддерживается этим типом стоп-заявки."
   },
+  "30261": {
+    "message": "stop-orders response limit exceeded",
+    "type": "INVALID_ARGUMENT",
+    "description": "Превышен лимит на количество стоп-заявок в ответе. Ограничьте запрос параметрами `from` и `to`."
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",
@@ -884,6 +889,11 @@
     "message": "Error limit exceeded",
     "type": "RESOURCE_EXHAUSTED",
     "description": "Превышен лимит ошибок в минуту. Проверьте параметры запроса, а также его реализуемость."
+  },
+  "80007": {
+    "message": "Stop-orders limit has been reached for instrument",
+    "type": "RESOURCE_EXHAUSTED",
+    "description": "Достигнуто максимальное количество стоп-ордеров по инструменту"
   },
   "90001": {
     "message": "Need confirmation: %s",

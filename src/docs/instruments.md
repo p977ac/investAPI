@@ -917,6 +917,22 @@ News — получение актуальных новостей
 | call_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата оферты. |
 | dlong_client |  [Quotation](#quotation) | Ставка риска в лонг с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5). |
 | dshort_client |  [Quotation](#quotation) | Ставка риска в шорт с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5). |
+| ratings | Массив объектов [Rating](#rating) | Массив рейтингов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### Rating
+Объект передачи информации о рейтинге.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| agency_name |  [string](#string) | Название рейтингового агентства. |
+| rating_level |  [string](#string) | Рейтинг. |
+| rating_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выставления рейтинга. |
+| forecast |  [string](#string) | Прогноз. |
+| is_under_watch |  [bool](#bool) | Признак нахождения под наблюдением. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
